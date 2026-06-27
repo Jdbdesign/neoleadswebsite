@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+**/node_modules/
+
+# next.js build output
+.next/
+**/.next/
+out/
+
+# logs
+*.log
+
+# env files
+.env*.local
+
+# misc
+.DS_Store
+
+# reference material (has its own git history)
+reference/
