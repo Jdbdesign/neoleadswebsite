@@ -12,6 +12,12 @@ import { useEffect } from 'react';
 export default function ZeusProspectingScripts() {
   useEffect(() => {
 
+    // Each self-contained animation IIFE registers a teardown here. Running
+    // them on unmount disconnects observers and cancels in-flight loops so
+    // React StrictMode's dev double-mount can't leave two loops driving the
+    // same DOM (which produced duplicated text like "FintechFintech").
+    var cleanups = [];
+
 /* ===== Zeus AI Search — live search demo animation ===== */
 (function () {
   var panel = document.getElementById('aiSearchPanel');
@@ -386,7 +392,8 @@ export default function ZeusProspectingScripts() {
     return;
   }
 
-  window.addEventListener('resize', function () { if (active) sizeSvg(); });
+  var onResize = function () { if (active) sizeSvg(); };
+  window.addEventListener('resize', onResize);
 
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -399,6 +406,7 @@ export default function ZeusProspectingScripts() {
     });
   }, { threshold: 0.35 });
   io.observe(panel);
+  cleanups.push(function () { io.disconnect(); window.removeEventListener('resize', onResize); cancel(); });
 })();
 
 /* ===== Verified Contacts — live verification ===== */
@@ -660,7 +668,8 @@ export default function ZeusProspectingScripts() {
     return;
   }
 
-  window.addEventListener('resize', function () { if (active) setupGeometry(); });
+  var onResize = function () { if (active) setupGeometry(); };
+  window.addEventListener('resize', onResize);
 
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -673,6 +682,7 @@ export default function ZeusProspectingScripts() {
     });
   }, { threshold: 0.35 });
   io.observe(panel);
+  cleanups.push(function () { io.disconnect(); window.removeEventListener('resize', onResize); cancel(); });
 })();
 
 /* ============================================================
@@ -979,6 +989,7 @@ export default function ZeusProspectingScripts() {
     });
   }, { threshold: 0.35 });
   io.observe(panel);
+  cleanups.push(function () { io.disconnect(); window.removeEventListener('resize', setupBorder); clearTimers(); });
 })();
 
 /* ===== Market Pulse chart ===== */
@@ -1741,6 +1752,7 @@ export default function ZeusProspectingScripts() {
   }, { threshold: 0.3 });
 
   io.observe(card);
+  cleanups.push(function () { io.disconnect(); cancel(); stopIdleClean(); });
 })();
 
 /* ============================================================
@@ -2301,7 +2313,12 @@ export default function ZeusProspectingScripts() {
   }, { threshold: 0.4 });
 
   io.observe(card);
+  cleanups.push(function () { io.disconnect(); cancel(); });
 })();
+
+    return function () {
+      cleanups.forEach(function (fn) { try { fn(); } catch (e) {} });
+    };
   }, []);
 
   return null;

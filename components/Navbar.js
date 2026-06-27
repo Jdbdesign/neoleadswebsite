@@ -14,10 +14,10 @@ const PRODUCTS = [
 ];
 
 const SOLUTIONS = [
-  { href: '#', icon: 'message-circle-off', title: 'Low Reply Rates', desc: 'Turn cold outreach into conversations that actually start' },
+  { href: '/low-reply-rates', icon: 'message-circle-off', title: 'Low Reply Rates', desc: 'Turn cold outreach into conversations that actually start' },
   { href: '#', icon: 'table-2', title: 'Manual Prospecting', desc: 'Find verified buyers in seconds, not spreadsheet hours' },
   { href: '#', icon: 'bell-off', title: 'Missed Hot Replies', desc: 'Never lose a warm reply in a flood of unread inboxes' },
-  { href: '#', icon: 'database', title: 'Stale Contact Data', desc: 'Stop wasting time on leads who left six months ago' },
+  { href: '/stale-contact-data', icon: 'database', title: 'Stale Contact Data', desc: 'Stop wasting time on leads who left six months ago' },
   { href: '#', icon: 'copy-x', title: 'Generic Outreach', desc: 'Replace copy-paste templates with AI-researched messages' },
   { href: '#', icon: 'bar-chart-3', title: 'No Pipeline Visibility', desc: 'See every deal, signal, and conversation in one place' },
   { href: '#', icon: 'shield-x', title: 'Emails Landing in Spam', desc: 'Fix deliverability before it kills your sender reputation' },
