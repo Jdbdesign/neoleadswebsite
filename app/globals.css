@@ -10540,3 +10540,1501 @@
     .scd-pipe-col { padding: 0; border-left: none; }
     .scd-pipe-col + .scd-pipe-col { border-top: 1px solid var(--bg-card-border); padding-top: 36px; }
   }
+
+
+/* =========================================================
+   EMAILS LANDING IN SPAM — solution page
+   ========================================================= */
+  :root {
+    --els-red: #FF6B6B;
+    --els-red-soft: rgba(255, 107, 107, 0.14);
+    --els-red-border: rgba(255, 107, 107, 0.32);
+    --els-amber: #F5C542;
+    --els-blue: #5B9BFF;
+  }
+
+  /* ----- Hero ----- */
+  .els-hero {
+    position: relative;
+    text-align: center;
+    padding: 84px 0 64px;
+    overflow: hidden;
+  }
+  .els-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 6%, rgba(108, 43, 223, 0.16) 0%, transparent 56%);
+    z-index: 0;
+  }
+  .els-hero .container { position: relative; z-index: 2; }
+
+  .els-hero h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 auto 24px;
+    max-width: 880px;
+  }
+  .els-hero h1 .els-nowrap { white-space: nowrap; }
+  .els-hero h1 .els-danger { color: var(--els-red); }
+
+  .els-sub {
+    color: #9AA7C7;
+    font-size: 16px;
+    line-height: 1.75;
+    max-width: 680px;
+    margin: 0 auto 34px;
+  }
+
+  .els-ctas {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+  .els-ctas .btn-primary { padding: 14px 28px; font-size: 15px; }
+  .els-ctas .btn-light { padding: 14px 28px; font-size: 15px; }
+
+  .els-microcopy {
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  /* ----- Infrastructure comparison ----- */
+  .els-compare { padding: 28px 0 110px; }
+
+  .els-compare-label {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .els-compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    max-width: 960px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .els-card {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 18px;
+    padding: 26px;
+  }
+  .els-card.is-after {
+    border-color: rgba(139, 77, 255, 0.5);
+    box-shadow: 0 0 0 1px rgba(139, 77, 255, 0.18), 0 24px 60px -28px rgba(108, 43, 223, 0.55);
+  }
+
+  .els-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+  .els-card-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .els-led {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .els-led.red { background: var(--els-red); box-shadow: 0 0 10px rgba(255, 107, 107, 0.7); }
+  .els-led.purple { background: var(--brand-light); box-shadow: 0 0 10px rgba(139, 77, 255, 0.7); }
+
+  .els-chip {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding: 5px 11px;
+    white-space: nowrap;
+  }
+  .els-chip.red {
+    color: var(--els-red);
+    background: var(--els-red-soft);
+    border: 1px solid var(--els-red-border);
+  }
+  .els-chip.purple {
+    color: #fff;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-light) 100%);
+    border: 1px solid transparent;
+  }
+
+  /* stat grid (2 x 2) */
+  .els-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .els-stat {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 12px;
+    padding: 16px 16px 18px;
+  }
+  .els-stat.is-flag.red {
+    background: var(--els-red-soft);
+    border-color: var(--els-red-border);
+  }
+  .els-stat.is-flag.purple {
+    background: rgba(108, 43, 223, 0.12);
+    border-color: rgba(139, 77, 255, 0.4);
+  }
+  .els-stat-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .els-stat-label.red { color: var(--els-red); }
+  .els-stat-label.purple { color: var(--brand-light); }
+  .els-stat-num {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+  }
+  .els-stat-num.red { color: var(--els-red); }
+  .els-stat-num.purple { color: var(--grow-purple); }
+  .els-stat-num.blue { color: var(--els-blue); }
+
+  /* status rows */
+  .els-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .els-row {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--text-secondary);
+  }
+  .els-row .lucide { width: 15px; height: 15px; flex-shrink: 0; color: var(--text-muted); }
+  .els-row b { color: var(--text-primary); font-weight: 600; }
+  .els-row b.red { color: var(--els-red); }
+  .els-row b.green { color: var(--green-accent); }
+  .els-row.red {
+    background: var(--els-red-soft);
+    border-color: var(--els-red-border);
+    color: #E6B4B4;
+  }
+  .els-row.red .lucide { color: var(--els-red); }
+  .els-row.green {
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.26);
+    color: #B6E6C6;
+  }
+  .els-row.green .lucide { color: var(--green-accent); }
+
+  /* ----- Metrics / data band (animated counters) ----- */
+  .els-metrics { padding: 4px 0 96px; }
+
+  .els-metrics-label {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    max-width: 620px;
+    margin: 0 auto 52px;
+  }
+
+  .els-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .els-metric { text-align: center; }
+  .els-metric-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--grow-purple);
+    margin-bottom: 16px;
+    font-variant-numeric: tabular-nums;
+  }
+  .els-metric-desc {
+    color: var(--text-secondary);
+    font-size: 14.5px;
+    line-height: 1.5;
+    max-width: 210px;
+    margin: 0 auto 10px;
+  }
+  .els-metric-src {
+    display: block;
+    color: var(--text-muted);
+    font-size: 11.5px;
+    font-weight: 500;
+  }
+
+  .els-metrics-foot {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: 500;
+    margin: 52px auto 0;
+  }
+  .els-metrics-foot .els-accent { color: var(--grow-purple); }
+
+  /* responsive */
+  @media (max-width: 760px) {
+    .els-hero { padding: 60px 0 48px; }
+    .els-hero h1 { font-size: 34px; }
+    .els-hero h1 .els-nowrap { white-space: normal; }
+    .els-sub { font-size: 15px; }
+    .els-compare-grid { grid-template-columns: 1fr; gap: 20px; }
+    .els-metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 36px 20px; }
+    .els-metric-num { font-size: 38px; }
+  }
+  @media (min-width: 1200px) {
+    .els-hero h1 { font-size: 58px; max-width: 960px; }
+    .els-sub { font-size: 17px; }
+    .els-metric-num { font-size: 50px; }
+  }
+
+
+/* =========================================================
+   EMAILS LANDING IN SPAM — four root causes (interactive)
+   ========================================================= */
+  .els-causes { padding: 30px 0 110px; }
+
+  .els-causes-head { text-align: center; max-width: 680px; margin: 0 auto 60px; }
+  .els-causes-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(108, 43, 223, 0.12);
+    border: 1px solid rgba(108, 43, 223, 0.35);
+    color: var(--brand-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding: 6px 14px;
+    margin-bottom: 22px;
+  }
+  .els-causes-eyebrow .lucide { width: 13px; height: 13px; }
+  .els-causes-head h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+  }
+  .els-causes-head p {
+    color: var(--text-secondary);
+    font-size: 15.5px;
+    line-height: 1.7;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .els-causes-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  /* ----- accordion list ----- */
+  .els-causes-list { display: flex; flex-direction: column; }
+
+  .els-cause {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--bg-card-border);
+    padding: 22px 4px 22px 0;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+    transition: opacity 0.25s ease;
+  }
+  .els-cause:last-child { border-bottom: none; }
+  .els-cause:not(.is-active):hover .els-cause-title { color: var(--text-primary); }
+  .els-cause:not(.is-active):hover .els-cause-ic { border-color: rgba(139, 77, 255, 0.4); color: var(--text-secondary); }
+
+  .els-cause-row { display: flex; align-items: center; gap: 14px; }
+  .els-cause-ic {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px; height: 38px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--bg-card-border);
+    color: var(--text-muted);
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  }
+  .els-cause-ic .lucide { width: 18px; height: 18px; }
+  .els-cause-title {
+    flex: 1;
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    transition: color 0.25s ease;
+  }
+  .els-cause-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .els-cause-body { padding-left: 52px; }
+  .els-cause-desc {
+    color: var(--text-muted);
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-top: 8px;
+  }
+  .els-cause-fix {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 14px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .els-cause-fix .lucide { width: 15px; height: 15px; color: var(--green-accent); margin-top: 2px; flex-shrink: 0; }
+  .els-cause-fix b { color: #CFD6EA; font-weight: 700; }
+
+  /* active state */
+  .els-cause.is-active { border-bottom-color: transparent; }
+  .els-cause.is-active .els-cause-title { color: var(--text-primary); }
+  .els-cause.is-active .els-cause-ic {
+    background: rgba(108, 43, 223, 0.16);
+    border-color: var(--brand);
+    color: var(--brand-light);
+  }
+  .els-cause.is-active .els-cause-num { color: var(--brand-light); }
+  .els-cause.is-active .els-cause-desc { color: var(--text-secondary); }
+
+  /* progress line under active item */
+  .els-cause-progress {
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 2px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+  }
+  .els-cause-progress-fill {
+    display: block;
+    width: 0%;
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--brand) 0%, var(--brand-light) 100%);
+    box-shadow: 0 0 10px rgba(139, 77, 255, 0.8);
+  }
+
+  /* ----- swapping visual panel ----- */
+  .els-causes-visual { position: relative; }
+  .els-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 18px;
+    padding: 26px;
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    animation: elsPanelIn 0.4s ease both;
+  }
+  @keyframes elsPanelIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .els-panel-eyebrow {
+    color: #6FA0FF;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .els-panel-arrow {
+    display: flex;
+    justify-content: center;
+    color: var(--text-muted);
+  }
+  .els-panel-arrow .lucide { width: 18px; height: 18px; }
+
+  /* DNS authentication panel (panel 1) */
+  .els-dns-block {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 14px;
+    padding: 18px;
+  }
+  .els-dns-block.is-bad {
+    background: rgba(255, 107, 107, 0.04);
+    border-color: rgba(255, 107, 107, 0.2);
+  }
+  .els-dns-block.is-good {
+    border-color: rgba(139, 77, 255, 0.5);
+    box-shadow: 0 0 0 1px rgba(139, 77, 255, 0.15), 0 20px 50px -30px rgba(108, 43, 223, 0.7);
+  }
+  .els-dns-stage {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+  .els-dns-stage.purple { color: var(--brand-light); }
+  .els-dns-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+  .els-dns-row:last-of-type { border-bottom: none; }
+  .els-dns-rec {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+  }
+  .els-dns-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .els-dns-stat .lucide { width: 14px; height: 14px; }
+  .els-dns-stat.red { color: var(--els-red); }
+  .els-dns-stat.green { color: var(--green-accent); }
+  .els-dns-note {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--els-red);
+  }
+  .els-dns-note .lucide { width: 14px; height: 14px; }
+  .els-dns-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--brand-light);
+    background: rgba(108, 43, 223, 0.12);
+    border: 1px solid rgba(139, 77, 255, 0.32);
+    border-radius: 10px;
+    padding: 9px 14px;
+  }
+  .els-dns-btn .lucide { width: 14px; height: 14px; }
+
+  /* inbox / list bars (panels 2 + 4) */
+  .els-inbox {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 14px;
+    padding: 18px;
+  }
+  .els-inbox.is-good {
+    border-color: rgba(139, 77, 255, 0.5);
+    box-shadow: 0 0 0 1px rgba(139, 77, 255, 0.15), 0 20px 50px -30px rgba(108, 43, 223, 0.7);
+  }
+  .els-inbox-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .els-inbox-title { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+  .els-inbox-stat { font-size: 13px; font-weight: 700; }
+  .els-inbox-stat.red { color: var(--els-red); }
+  .els-inbox-stat.purple { color: var(--grow-purple); }
+  .els-bar {
+    display: flex;
+    height: 9px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .els-bar .seg { display: block; height: 100%; }
+  .els-bar .seg.cold-fill { background: linear-gradient(90deg, #3C4768 0%, #6B7596 100%); }
+  .els-bar .seg.spam-fill { background: var(--els-red); }
+  .els-bar .seg.good-fill { background: linear-gradient(90deg, var(--brand-light) 0%, var(--green-accent) 100%); }
+  .els-inbox-legend { display: flex; justify-content: space-between; margin-top: 10px; font-size: 12px; color: var(--text-secondary); }
+  .els-inbox-legend .red { color: var(--els-red); }
+  .els-inbox-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .els-tool { font-size: 12px; font-weight: 600; border-radius: 8px; padding: 6px 11px; }
+  .els-tool.green { color: var(--green-accent); background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); }
+  .els-tool.gray { color: var(--text-secondary); background: rgba(255, 255, 255, 0.03); border: 1px solid var(--bg-card-border); }
+
+  /* message cards (panel 3) */
+  .els-msg {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 14px;
+    padding: 16px 18px;
+  }
+  .els-msg.is-bad { opacity: 0.78; }
+  .els-msg.is-good {
+    border-color: rgba(139, 77, 255, 0.5);
+    box-shadow: 0 0 0 1px rgba(139, 77, 255, 0.15), 0 20px 50px -30px rgba(108, 43, 223, 0.7);
+  }
+  .els-msg-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  .els-msg-label.purple { color: var(--brand-light); }
+  .els-msg-body { font-size: 13.5px; line-height: 1.65; color: var(--text-secondary); }
+  .els-msg-body.bright { color: #C7CEE2; }
+  .els-token {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    color: var(--els-red);
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 4px;
+    padding: 1px 5px;
+  }
+  .els-hl { color: var(--grow-purple); font-weight: 600; }
+
+  .els-flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 6px 11px;
+  }
+  .els-flag .lucide { width: 13px; height: 13px; }
+  .els-flag.red { color: var(--els-red); background: rgba(255, 107, 107, 0.12); border: 1px solid rgba(255, 107, 107, 0.3); }
+  .els-flag.green { color: var(--green-accent); background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); }
+
+  /* responsive */
+  @media (max-width: 900px) {
+    .els-causes-layout { grid-template-columns: 1fr; gap: 36px; }
+    .els-causes-visual { order: -1; }
+    .els-panel { min-height: 0; }
+  }
+  @media (max-width: 600px) {
+    .els-causes-head h2 { font-size: 27px; }
+    .els-cause-body { padding-left: 0; }
+  }
+
+
+/* =========================================================
+   EMAILS LANDING IN SPAM — authentication + warmup split
+   ========================================================= */
+  .els-pp { padding: 40px 0 110px; }
+
+  .els-pp-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ----- left copy ----- */
+  .els-pp-label {
+    display: inline-block;
+    color: #8B9CFF;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .els-pp-text h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .els-pp-lead {
+    color: var(--text-secondary);
+    font-size: 15.5px;
+    line-height: 1.75;
+    margin-bottom: 34px;
+  }
+
+  .els-pp-feats { display: flex; flex-direction: column; gap: 24px; }
+  .els-pp-feat { display: flex; gap: 14px; }
+  .els-pp-feat-ic {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px; height: 38px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(108, 43, 223, 0.14);
+    border: 1px solid rgba(139, 77, 255, 0.32);
+    color: var(--brand-light);
+  }
+  .els-pp-feat-ic .lucide { width: 18px; height: 18px; }
+  .els-pp-feat-body h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+  .els-pp-feat-body p {
+    color: var(--text-secondary);
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+
+  /* ----- right: domain setup card ----- */
+  .els-setup {
+    background: #0A0F22;
+    border: 1px solid var(--bg-card-border);
+    border-radius: 18px;
+    padding: 26px;
+    box-shadow: 0 30px 70px -40px rgba(0, 0, 0, 0.8);
+  }
+  .els-setup-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .els-setup-eyebrow {
+    color: var(--text-muted);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .els-setup-badge {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--brand-light);
+    background: rgba(108, 43, 223, 0.16);
+    border: 1px solid rgba(139, 77, 255, 0.4);
+    border-radius: 20px;
+    padding: 4px 12px;
+  }
+
+  .els-setup-rows { display: flex; flex-direction: column; gap: 10px; }
+  .els-setup-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(34, 197, 94, 0.05);
+    border: 1px solid rgba(34, 197, 94, 0.22);
+    border-radius: 12px;
+    padding: 13px 15px;
+  }
+  .els-setup-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px; height: 22px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: var(--green-accent);
+    color: #06210F;
+  }
+  .els-setup-check .lucide { width: 14px; height: 14px; }
+  .els-setup-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--text-primary);
+  }
+  .els-setup-detail {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  .els-setup-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--brand-light);
+    background: rgba(108, 43, 223, 0.12);
+    border: 1px solid rgba(139, 77, 255, 0.32);
+    border-radius: 10px;
+    padding: 8px 13px;
+  }
+  .els-setup-pill .lucide { width: 14px; height: 14px; }
+
+  .els-setup-divider {
+    height: 1px;
+    background: var(--bg-card-border);
+    margin: 22px 0;
+  }
+
+  .els-setup-warmhead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .els-setup-warmlabel {
+    color: var(--text-muted);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .els-setup-warmbadge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-light) 100%);
+    border-radius: 20px;
+    padding: 4px 11px;
+  }
+
+  /* warmup timeline */
+  .els-warm-track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 6px;
+    margin-bottom: 12px;
+  }
+  .els-warm-line {
+    position: absolute;
+    left: 12px; right: 12px;
+    top: 50%;
+    height: 2px;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, var(--brand) 0%, var(--brand-light) 70%, var(--green-accent) 100%);
+    opacity: 0.45;
+  }
+  .els-warm-node {
+    position: relative;
+    z-index: 1;
+    width: 13px; height: 13px;
+    border-radius: 50%;
+    background: var(--bg-card-border);
+  }
+  .els-warm-node.on { background: var(--brand-light); box-shadow: 0 0 10px rgba(139, 77, 255, 0.7); }
+  .els-warm-node.done { background: var(--green-accent); box-shadow: 0 0 10px rgba(34, 197, 94, 0.8); }
+  .els-warm-legend {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  .els-setup-foot {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--green-accent);
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.28);
+    border-radius: 10px;
+    padding: 11px 14px;
+  }
+  .els-setup-foot .lucide { width: 15px; height: 15px; flex-shrink: 0; }
+
+  .els-pp-label.neutral { color: var(--text-secondary); }
+
+  /* responsive */
+  @media (max-width: 900px) {
+    .els-pp-layout { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 600px) {
+    .els-pp-text h2 { font-size: 27px; }
+  }
+
+
+/* =========================================================
+   EMAILS LANDING IN SPAM — list hygiene + monitoring split
+   ========================================================= */
+  .els-df { padding: 40px 0 110px; }
+
+  .els-df-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ----- inbox placement monitor card ----- */
+  .els-monitor {
+    background: #0A0F22;
+    border: 1px solid var(--bg-card-border);
+    border-radius: 18px;
+    padding: 26px;
+    box-shadow: 0 30px 70px -40px rgba(0, 0, 0, 0.8);
+  }
+  .els-monitor-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+  .els-monitor-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .els-monitor-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--green-accent);
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 20px;
+    padding: 4px 11px;
+  }
+  .els-monitor-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green-accent);
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.9);
+    animation: elsPulse 1.8s ease-in-out infinite;
+  }
+  @keyframes elsPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+
+  .els-mon-rows { display: flex; flex-direction: column; gap: 16px; }
+  .els-mon-row-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .els-mon-prov { font-size: 13.5px; font-weight: 600; color: var(--text-secondary); }
+  .els-mon-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  .els-mon-stat .lucide { width: 13px; height: 13px; }
+  .els-mon-stat.green { color: var(--grow-purple); }
+  .els-mon-stat.amber { color: var(--els-amber); }
+  .els-mon-bar {
+    display: flex;
+    height: 8px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .els-mon-bar .seg { display: block; height: 100%; }
+  .els-mon-bar .seg.primary { background: linear-gradient(90deg, var(--brand) 0%, var(--brand-light) 100%); }
+  .els-mon-bar .seg.spam { background: var(--els-red); opacity: 0.85; }
+
+  .els-mon-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 16px 0 20px;
+    font-size: 11.5px;
+    color: var(--text-muted);
+  }
+  .els-mon-note { color: var(--text-secondary); }
+
+  .els-mon-verify {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 14px;
+    padding: 16px;
+  }
+  .els-mon-verify-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .els-mon-verify-title { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+  .els-mon-verify-count { font-size: 11.5px; color: var(--text-muted); }
+  .els-mon-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .els-mon-chip {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 8px;
+    padding: 6px 10px;
+  }
+  .els-mon-chip b { font-family: 'Outfit', sans-serif; font-weight: 700; margin-right: 3px; }
+  .els-mon-chip.green { color: #B6E6C6; border-color: rgba(34, 197, 94, 0.3); background: rgba(34, 197, 94, 0.08); }
+  .els-mon-chip.green b { color: var(--green-accent); }
+  .els-mon-chip.red { color: #E6B4B4; border-color: rgba(255, 107, 107, 0.3); background: rgba(255, 107, 107, 0.08); }
+  .els-mon-chip.red b { color: var(--els-red); }
+  .els-mon-chip.amber { color: #EAD49A; border-color: rgba(245, 197, 66, 0.3); background: rgba(245, 197, 66, 0.08); }
+  .els-mon-chip.amber b { color: var(--els-amber); }
+  .els-mon-chip.gray b { color: var(--text-secondary); }
+
+  .els-mon-verify-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .els-mon-verify-foot b.green { color: var(--green-accent); font-weight: 700; }
+  .els-mon-down { color: var(--text-muted); }
+  .els-mon-route { color: var(--brand-light); font-weight: 600; }
+
+  /* responsive */
+  @media (max-width: 900px) {
+    .els-df-layout { grid-template-columns: 1fr; gap: 40px; }
+    .els-monitor { order: -1; }
+  }
+
+
+/* =========================================================
+   EMAILS LANDING IN SPAM — the full fix (end-to-end bento)
+   ========================================================= */
+  .els-fix { padding: 40px 0 120px; }
+
+  .els-fix-head { text-align: center; max-width: 680px; margin: 0 auto 48px; }
+  .els-fix-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(108, 43, 223, 0.12);
+    border: 1px solid rgba(108, 43, 223, 0.35);
+    color: var(--brand-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding: 6px 14px;
+    margin-bottom: 22px;
+  }
+  .els-fix-eyebrow .lucide { width: 13px; height: 13px; }
+  .els-fix-head h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .els-fix-head p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .els-fix-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+  .els-fix-card.c-half { grid-column: span 3; }
+  .els-fix-card.c-third { grid-column: span 2; }
+
+  .els-fix-card {
+    display: flex;
+    flex-direction: column;
+    background: #090E20;
+    border: 1px solid var(--bg-card-border);
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .els-fix-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .els-fix-meta { display: inline-flex; align-items: center; gap: 11px; }
+  .els-fix-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; height: 28px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-light) 100%);
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .els-fix-product {
+    color: var(--brand-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .els-fix-fixes {
+    flex-shrink: 0;
+    color: var(--els-red);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: rgba(255, 107, 107, 0.08);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    border-radius: 20px;
+    padding: 4px 11px;
+    white-space: nowrap;
+  }
+
+  .els-fix-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+  .els-fix-desc {
+    color: var(--text-secondary);
+    font-size: 13.5px;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  /* mock shell */
+  .els-fix-mock {
+    margin-top: auto;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .els-fixm-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .els-fixm-label {
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .els-fixm-tag {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--brand-light);
+    background: rgba(108, 43, 223, 0.16);
+    border: 1px solid rgba(139, 77, 255, 0.4);
+    border-radius: 20px;
+    padding: 3px 10px;
+  }
+
+  /* mock 1 — list health */
+  .els-fixm-count { font-family: 'Outfit', sans-serif; font-size: 13px; color: var(--text-muted); }
+  .els-fixm-count b { font-size: 22px; font-weight: 700; color: var(--text-primary); }
+  .els-fixm-bar {
+    height: 8px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 14px;
+  }
+  .els-fixm-bar-fill {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--brand) 0%, var(--brand-light) 100%);
+  }
+  .els-fixm-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .els-fixm-stat {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 10px;
+    padding: 11px 12px;
+  }
+  .els-fixm-stat-num {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text-primary);
+  }
+  .els-fixm-stat-num.green { color: var(--green-accent); }
+  .els-fixm-stat-num.red { color: var(--els-red); }
+  .els-fixm-stat-lbl {
+    display: block;
+    margin-top: 6px;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* mock 2 — domain authentication rows */
+  .els-fixm-auth { display: flex; flex-direction: column; gap: 8px; }
+  .els-fixm-auth-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(34, 197, 94, 0.05);
+    border: 1px solid rgba(34, 197, 94, 0.22);
+    border-radius: 10px;
+    padding: 10px 13px;
+  }
+  .els-fixm-auth-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--text-primary);
+  }
+  .els-fixm-auth-name .lucide { width: 14px; height: 14px; color: var(--green-accent); }
+  .els-fixm-auth-val { font-size: 12px; color: var(--text-muted); }
+
+  /* mock 3 — warmrit reputation */
+  .els-fixm-rep { font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 700; color: var(--text-primary); line-height: 1; }
+  .els-fixm-dots { display: flex; gap: 5px; margin-bottom: 14px; }
+  .els-fixm-dots span { flex: 1; height: 7px; border-radius: 3px; }
+  .els-fixm-dots .on { background: linear-gradient(90deg, var(--brand) 0%, var(--brand-light) 100%); }
+  .els-fixm-dots .off { background: rgba(255, 255, 255, 0.08); }
+  .els-fixm-warmed {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--green-accent);
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.28);
+    border-radius: 9px;
+    padding: 9px 12px;
+  }
+  .els-fixm-warmed .lucide { width: 14px; height: 14px; }
+
+  /* mock 4 — AI filter test */
+  .els-fixm-filter { display: flex; flex-direction: column; gap: 10px; }
+  .els-fixm-filter-row {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 10px;
+    padding: 11px 13px;
+  }
+  .els-fixm-filter-row.is-bad { background: rgba(255, 107, 107, 0.06); border-color: rgba(255, 107, 107, 0.26); }
+  .els-fixm-filter-row.is-good { background: rgba(108, 43, 223, 0.1); border-color: rgba(139, 77, 255, 0.4); }
+  .els-fixm-filter-head {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .els-fixm-filter-head .lucide { width: 13px; height: 13px; }
+  .els-fixm-filter-head.red { color: var(--els-red); }
+  .els-fixm-filter-head.purple { color: var(--brand-light); }
+  .els-fixm-filter-q { font-size: 12.5px; line-height: 1.5; color: var(--text-secondary); }
+  .els-fixm-filter-q.struck { color: var(--text-muted); text-decoration: line-through; }
+
+  /* mock 5 — live monitoring */
+  .els-fixm-rate { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .els-fixm-rate-tile {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 10px;
+    padding: 12px 13px;
+  }
+  .els-fixm-rate-num {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--grow-purple);
+  }
+  .els-fixm-rate-lbl {
+    display: block;
+    margin-top: 6px;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .els-fixm-alert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: rgba(245, 197, 66, 0.07);
+    border: 1px solid rgba(245, 197, 66, 0.3);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .els-fixm-alert-txt {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #EAD49A;
+  }
+  .els-fixm-alert-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--els-amber);
+    box-shadow: 0 0 8px rgba(245, 197, 66, 0.8);
+  }
+  .els-fixm-alert-tag {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--els-red);
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid rgba(255, 107, 107, 0.32);
+    border-radius: 20px;
+    padding: 3px 9px;
+    white-space: nowrap;
+  }
+  .els-fixm-healthy {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--green-accent);
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.28);
+    border-radius: 9px;
+    padding: 9px 12px;
+  }
+  .els-fixm-healthy .lucide { width: 14px; height: 14px; }
+
+  /* responsive */
+  @media (max-width: 900px) {
+    .els-fix-grid { grid-template-columns: 1fr; }
+    .els-fix-card.c-half,
+    .els-fix-card.c-third { grid-column: auto; }
+  }
+  @media (min-width: 901px) and (max-width: 1100px) {
+    .els-fix-card.c-third { grid-column: span 3; }
+  }
+  @media (max-width: 600px) {
+    .els-fix-head h2 { font-size: 27px; }
+  }
+  @media (min-width: 1200px) {
+    .els-fix-head h2 { font-size: 38px; }
+  }
+
+
+/* =========================================================
+   EMAILS LANDING IN SPAM — the deliverability fix (summary)
+   ========================================================= */
+  .els-sum {
+    padding: 30px 0 130px;
+    background: var(--bg-alt);
+    border-top: 1px solid var(--bg-card-border);
+  }
+
+  .els-sum-head { text-align: center; max-width: 720px; margin: 0 auto 60px; }
+  .els-sum-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(108, 43, 223, 0.12);
+    border: 1px solid rgba(108, 43, 223, 0.35);
+    color: var(--brand-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding: 6px 14px;
+    margin-bottom: 22px;
+  }
+  .els-sum-eyebrow .lucide { width: 13px; height: 13px; }
+  .els-sum-head h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .els-sum-head p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .els-sum-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+  .els-sum-col {
+    display: flex;
+    flex-direction: column;
+    padding: 4px 36px;
+  }
+  .els-sum-col + .els-sum-col { border-left: 1px solid var(--bg-card-border); }
+  .els-sum-col:first-child { padding-left: 0; }
+  .els-sum-col:last-child { padding-right: 0; }
+
+  .els-sum-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+  }
+  .els-sum-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; }
+  .els-sum-chip {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--brand-light);
+    background: rgba(108, 43, 223, 0.1);
+    border: 1px solid rgba(108, 43, 223, 0.3);
+    border-radius: 20px;
+    padding: 4px 12px;
+  }
+  .els-sum-desc {
+    color: var(--text-secondary);
+    font-size: 13.5px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+  }
+  .els-sum-shift {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid var(--bg-card-border);
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--text-muted);
+  }
+  .els-sum-shift .lucide {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: var(--brand-light);
+  }
+  .els-sum-from { color: var(--text-secondary); }
+  .els-sum-to { color: var(--grow-purple); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .els-sum { padding-bottom: 90px; }
+    .els-sum-grid { grid-template-columns: 1fr; gap: 0; }
+    .els-sum-col { padding: 28px 0; }
+    .els-sum-col:first-child { padding-top: 0; }
+    .els-sum-col + .els-sum-col {
+      border-left: 0;
+      border-top: 1px solid var(--bg-card-border);
+    }
+  }
+  @media (max-width: 600px) {
+    .els-sum-head h2 { font-size: 27px; }
+  }
+  @media (min-width: 1200px) {
+    .els-sum-head h2 { font-size: 38px; }
+  }
