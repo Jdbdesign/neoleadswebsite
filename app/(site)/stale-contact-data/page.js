@@ -2,6 +2,14 @@ import Icon from '@/components/Icon';
 import ClientScripts from '@/components/ClientScripts';
 import StaleContactDataScripts from '@/components/StaleContactDataScripts';
 import StaleContactDataCauses from '@/components/StaleContactDataCauses';
+import StaleContactDataCompare from '@/components/StaleContactDataCompare';
+import StaleContactDataStatusCard from '@/components/StaleContactDataStatusCard';
+import StaleContactDataVerifyCard from '@/components/StaleContactDataVerifyCard';
+import StaleContactDataFreshCard from '@/components/StaleContactDataFreshCard';
+import StaleContactDataValidateCard from '@/components/StaleContactDataValidateCard';
+import StaleContactDataProtectCard from '@/components/StaleContactDataProtectCard';
+import StaleContactDataSendCard from '@/components/StaleContactDataSendCard';
+import StaleContactDataMonitorCard from '@/components/StaleContactDataMonitorCard';
 
 export const metadata = { title: 'Stale Contact Data | NeoLeads' };
 
@@ -39,135 +47,7 @@ export default function StaleContactDataPage() {
       </section>
 
       {/* ===================== BEFORE / AFTER COMPARISON ===================== */}
-      <section className="scd-compare">
-        <div className="container" data-reveal-stagger="120">
-          <p className="scd-compare-label" data-reveal>
-            What Continuous Verification Actually Looks Like
-          </p>
-
-          <div className="scd-compare-grid">
-
-            {/* ---------- BEFORE ---------- */}
-            <article className="scd-card" data-reveal>
-              <div className="scd-card-head">
-                <span className="scd-card-title">
-                  <span className="scd-led red" aria-hidden="true"></span>
-                  Your List Today
-                </span>
-                <span className="scd-chip red">Imported 8 mo ago</span>
-              </div>
-
-              <div className="scd-stats">
-                <div className="scd-stat">
-                  <span className="scd-stat-label">Contacts</span>
-                  <span className="scd-stat-num">1,000</span>
-                </div>
-                <div className="scd-stat">
-                  <span className="scd-stat-label">Verified</span>
-                  <span className="scd-stat-num muted">Unknown</span>
-                </div>
-                <div className="scd-stat is-flag red">
-                  <span className="scd-stat-label red">Bounce Rate</span>
-                  <span className="scd-stat-num red">8.4%</span>
-                </div>
-                <div className="scd-stat">
-                  <span className="scd-stat-label">Wasted Sends</span>
-                  <span className="scd-stat-num">186</span>
-                </div>
-              </div>
-
-              <div className="scd-rep red">
-                <Icon name="triangle-alert" aria-hidden="true" />
-                Sender reputation: At risk
-              </div>
-
-              <div className="scd-contacts">
-                <div className="scd-contact">
-                  <span className="scd-contact-ic red" aria-hidden="true"><Icon name="triangle-alert" /></span>
-                  <div className="scd-contact-body">
-                    <span className="scd-contact-name">Marcus T.</span>
-                    <span className="scd-contact-note">Left Acme Corp 5 months ago</span>
-                  </div>
-                </div>
-                <div className="scd-contact">
-                  <span className="scd-contact-ic red" aria-hidden="true"><Icon name="triangle-alert" /></span>
-                  <div className="scd-contact-body">
-                    <span className="scd-contact-name">priya.n@vertexco.com</span>
-                    <span className="scd-contact-note">Domain no longer active</span>
-                  </div>
-                </div>
-                <div className="scd-contact">
-                  <span className="scd-contact-ic red" aria-hidden="true"><Icon name="triangle-alert" /></span>
-                  <div className="scd-contact-body">
-                    <span className="scd-contact-name">david.o@stackline.io</span>
-                    <span className="scd-contact-note">Role changed: now CMO, not VP Sales</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            {/* ---------- AFTER ---------- */}
-            <article className="scd-card is-after" data-reveal>
-              <div className="scd-card-head">
-                <span className="scd-card-title">
-                  <span className="scd-led purple" aria-hidden="true"></span>
-                  With NeoLeads
-                </span>
-                <span className="scd-chip purple">Continuously Verified</span>
-              </div>
-
-              <div className="scd-stats">
-                <div className="scd-stat">
-                  <span className="scd-stat-label">Verified</span>
-                  <span className="scd-stat-num purple">847</span>
-                </div>
-                <div className="scd-stat">
-                  <span className="scd-stat-label">Removed</span>
-                  <span className="scd-stat-num">89</span>
-                </div>
-                <div className="scd-stat is-flag purple">
-                  <span className="scd-stat-label purple">Bounce Rate</span>
-                  <span className="scd-stat-num purple">0.3%</span>
-                </div>
-                <div className="scd-stat">
-                  <span className="scd-stat-label">Flagged</span>
-                  <span className="scd-stat-num">64</span>
-                </div>
-              </div>
-
-              <div className="scd-rep green">
-                <Icon name="check" aria-hidden="true" />
-                Sender reputation: Healthy
-              </div>
-
-              <div className="scd-contacts">
-                <div className="scd-contact">
-                  <span className="scd-contact-ic green" aria-hidden="true"><Icon name="check" /></span>
-                  <div className="scd-contact-body">
-                    <span className="scd-contact-name">Marcus T.</span>
-                    <span className="scd-contact-note">New role: VP Sales at Growthline &middot; Signal: Series A raised</span>
-                  </div>
-                </div>
-                <div className="scd-contact">
-                  <span className="scd-contact-ic green" aria-hidden="true"><Icon name="check" /></span>
-                  <div className="scd-contact-body">
-                    <span className="scd-contact-name">priya.n@vertexai.com</span>
-                    <span className="scd-contact-note">New domain verified &middot; Deliverable</span>
-                  </div>
-                </div>
-                <div className="scd-contact">
-                  <span className="scd-contact-ic green" aria-hidden="true"><Icon name="check" /></span>
-                  <div className="scd-contact-body">
-                    <span className="scd-contact-name">david.o@stackline.io</span>
-                    <span className="scd-contact-note">Role updated: CMO &middot; Score adjusted</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-          </div>
-        </div>
-      </section>
+      <StaleContactDataCompare />
 
       {/* ===================== METRICS / NUMBERS ===================== */}
       <section className="scd-metrics">
@@ -258,65 +138,9 @@ export default function StaleContactDataPage() {
               </ul>
             </div>
 
-            {/* ---------- visual: contact status update card ---------- */}
-            <div className="scd-deep-visual" data-reveal>
-              <div className="scd-deep-card">
-                <div className="scd-deep-card-head">
-                  <span className="scd-deep-card-label">Contact Status Update</span>
-                  <span className="scd-deep-card-badge">
-                    <Icon name="sparkles" aria-hidden="true" /> NeoBrain AI
-                  </span>
-                </div>
-
-                {/* stale record */}
-                <div className="scd-deep-rec is-stale">
-                  <span className="scd-deep-av gray" aria-hidden="true">MT</span>
-                  <div className="scd-deep-rec-id">
-                    <span className="scd-deep-rec-name struck">Marcus T. &middot; VP Sales</span>
-                    <span className="scd-deep-rec-meta">Acme Corp &middot; Verified last quarter</span>
-                  </div>
-                </div>
-
-                {/* updated record */}
-                <div className="scd-deep-rec is-current">
-                  <span className="scd-deep-av purple" aria-hidden="true">MT</span>
-                  <div className="scd-deep-rec-id">
-                    <span className="scd-deep-rec-name">Marcus T. &middot; VP Sales</span>
-                    <span className="scd-deep-rec-meta">Growthline.io &middot; Verified 2 days ago</span>
-                  </div>
-                  <span className="scd-deep-rec-dot" aria-hidden="true"></span>
-                </div>
-
-                <div className="scd-deep-status">
-                  <Icon name="refresh-cw" aria-hidden="true" />
-                  Job change detected &mdash; record updated
-                </div>
-
-                <div className="scd-deep-divider" aria-hidden="true"></div>
-
-                <span className="scd-deep-sub">Replacement found at Acme Corp</span>
-
-                <div className="scd-deep-rec is-replace">
-                  <span className="scd-deep-av purple" aria-hidden="true">SK</span>
-                  <div className="scd-deep-rec-id">
-                    <span className="scd-deep-rec-name">Sarah K. &middot; VP Sales</span>
-                    <span className="scd-deep-rec-meta">Acme Corp &middot; Signal: New hire, scaling team</span>
-                  </div>
-                  <div className="scd-deep-score">
-                    <span className="scd-deep-score-num">88</span>
-                    <span className="scd-deep-score-lbl">Score</span>
-                  </div>
-                </div>
-
-                <div className="scd-deep-actions">
-                  <button type="button" className="scd-deep-btn primary">
-                    Open in Zeus <Icon name="arrow-right" aria-hidden="true" />
-                  </button>
-                  <button type="button" className="scd-deep-btn ghost">
-                    Add to Sendrit campaign <Icon name="arrow-right" aria-hidden="true" />
-                  </button>
-                </div>
-              </div>
+            {/* ---------- visual: contact status update card (animated) ---------- */}
+            <div className="scd-deep-visual">
+              <StaleContactDataStatusCard />
             </div>
 
           </div>
@@ -328,85 +152,9 @@ export default function StaleContactDataPage() {
         <div className="container">
           <div className="scd-deep-grid" data-reveal-stagger="120">
 
-            {/* ---------- visual: verifyrit + snaarpmail ---------- */}
-            <div className="scd-deep-visual" data-reveal>
-
-              <div className="scd-deep-card">
-                <div className="scd-deep-card-head">
-                  <span className="scd-deep-card-label scd-vf-title">
-                    Verifyrit <span>&mdash; Pre-Campaign Check</span>
-                  </span>
-                  <span className="scd-vf-meta">Q3 OUTREACH &middot; 1,000</span>
-                </div>
-
-                <div className="scd-vf-chips">
-                  <span className="scd-vf-chip green"><b>847</b> Deliverable</span>
-                  <span className="scd-vf-chip red"><b>89</b> Invalid</span>
-                  <span className="scd-vf-chip amber"><b>64</b> Risky</span>
-                  <span className="scd-vf-chip gray"><b>0</b> Spam Trap</span>
-                </div>
-
-                <div className="scd-vf-rows">
-                  <div className="scd-vf-row">
-                    <span className="scd-vf-ic red" aria-hidden="true"><Icon name="x" /></span>
-                    <div className="scd-vf-id">
-                      <span className="scd-vf-addr">priya.n@vertexco.com</span>
-                      <span className="scd-vf-note">Domain inactive</span>
-                    </div>
-                    <span className="scd-vf-stat red">Removed</span>
-                  </div>
-                  <div className="scd-vf-row">
-                    <span className="scd-vf-ic amber" aria-hidden="true"><Icon name="triangle-alert" /></span>
-                    <div className="scd-vf-id">
-                      <span className="scd-vf-addr">david.o@stackline.io</span>
-                      <span className="scd-vf-note">Catch-all resolved &rarr; deliverable</span>
-                    </div>
-                    <span className="scd-vf-stat amber">Cleared</span>
-                  </div>
-                  <div className="scd-vf-row">
-                    <span className="scd-vf-ic green" aria-hidden="true"><Icon name="check" /></span>
-                    <div className="scd-vf-id">
-                      <span className="scd-vf-addr">chen.w@orionhealth.com</span>
-                      <span className="scd-vf-note">Verified deliverable</span>
-                    </div>
-                    <span className="scd-vf-stat green">&rarr; Sendrit</span>
-                  </div>
-                </div>
-
-                <div className="scd-vf-foot">
-                  <Icon name="check" aria-hidden="true" />
-                  847 cleared &amp; sent to Sendrit &middot; Bounce forecast 0.3%
-                </div>
-              </div>
-
-              <div className="scd-deep-card scd-sm-card">
-                <div className="scd-deep-card-head">
-                  <span className="scd-deep-card-label scd-vf-title">
-                    Snaarpmail <span>&mdash; Domain Health</span>
-                  </span>
-                  <span className="scd-sm-tag">post-campaign</span>
-                </div>
-
-                <div className="scd-sm-stats">
-                  <div className="scd-sm-stat">
-                    <span className="scd-sm-num green">0.3%</span>
-                    <span className="scd-sm-lbl">Bounce rate &middot; safe zone</span>
-                  </div>
-                  <div className="scd-sm-stat">
-                    <span className="scd-sm-num green">0.04%</span>
-                    <span className="scd-sm-lbl">Spam complaints &middot; &lt; 0.1%</span>
-                  </div>
-                </div>
-
-                <div className="scd-sm-rep">
-                  <span className="scd-sm-rep-lbl">Domain reputation</span>
-                  <span className="scd-sm-rep-val">
-                    <span className="scd-deep-rec-dot" aria-hidden="true"></span>
-                    Healthy
-                  </span>
-                </div>
-              </div>
-
+            {/* ---------- visual: verifyrit + snaarpmail (animated) ---------- */}
+            <div className="scd-deep-visual">
+              <StaleContactDataVerifyCard />
             </div>
 
             {/* ---------- copy ---------- */}
@@ -473,174 +221,20 @@ export default function StaleContactDataPage() {
 
           <div className="scd-fix-grid" data-reveal-stagger="90">
 
-            {/* ---------- Card 1: Zeus + NeoBrain ---------- */}
-            <article className="scd-fix-card" data-reveal>
-              <div className="scd-fix-card-head">
-                <span className="scd-fix-num">1</span>
-                <span className="scd-fix-product">Zeus &bull; NeoBrain AI</span>
-                <span className="scd-fix-tag">Fixes &middot; Static List</span>
-              </div>
-              <h3 className="scd-fix-title">Start fresh &mdash; every time</h3>
-              <p className="scd-fix-desc">
-                Every Zeus search returns continuously refreshed, signal-verified contacts &mdash;
-                not a static export. NeoBrain AI flags stale records and surfaces replacements
-                before they cause damage.
-              </p>
-              <div className="scd-fix-demo">
-                <div className="scd-fix-demo-head">
-                  <span className="scd-fix-demo-eyebrow">Verified today &middot; Live signal</span>
-                  <span className="scd-fix-zeus">Zeus</span>
-                </div>
-                <div className="scd-fix-contact">
-                  <span className="scd-deep-av purple" aria-hidden="true">MT</span>
-                  <div className="scd-fix-contact-id">
-                    <span className="scd-fix-contact-name">Marcus T.</span>
-                    <span className="scd-fix-contact-role">VP Sales &middot; Acme Corp</span>
-                  </div>
-                  <div className="scd-fix-intent">
-                    <span className="scd-fix-intent-num">94</span>
-                    <span className="scd-fix-intent-lbl">Intent</span>
-                  </div>
-                </div>
-                <div className="scd-fix-signals">
-                  <span className="scd-fix-signal">Raised $22M &middot; 9d</span>
-                  <span className="scd-fix-signal">9 SDR roles &middot; 5d</span>
-                  <span className="scd-fix-signal">New CRO &middot; 12d</span>
-                </div>
-              </div>
-            </article>
+            {/* ---------- Card 1: Zeus + NeoBrain (animated live loop) ---------- */}
+            <StaleContactDataFreshCard />
 
-            {/* ---------- Card 2: Verifyrit ---------- */}
-            <article className="scd-fix-card" data-reveal>
-              <div className="scd-fix-card-head">
-                <span className="scd-fix-num">2</span>
-                <span className="scd-fix-product">Verifyrit</span>
-                <span className="scd-fix-tag">Fixes &middot; Unvalidated</span>
-              </div>
-              <h3 className="scd-fix-title">Validate before it sends</h3>
-              <p className="scd-fix-desc">
-                Every contact entering a Sendrit campaign passes through Verifyrit&rsquo;s 7-layer
-                check first &mdash; on every launch, not just the first import. Invalid addresses,
-                catch-alls, and spam traps are removed before a sequence fires.
-              </p>
-              <div className="scd-fix-demo">
-                <div className="scd-fix-demo-head">
-                  <span className="scd-fix-demo-eyebrow">List health</span>
-                  <span className="scd-fix-health">480<span>/480</span></span>
-                </div>
-                <div className="scd-fix-bar" aria-hidden="true"><span style={{ width: '100%' }} /></div>
-                <div className="scd-fix-stats3">
-                  <div className="scd-fix-stat">
-                    <span className="scd-fix-stat-num green">462</span>
-                    <span className="scd-fix-stat-lbl">Valid</span>
-                  </div>
-                  <div className="scd-fix-stat">
-                    <span className="scd-fix-stat-num">12</span>
-                    <span className="scd-fix-stat-lbl">Catch-all</span>
-                  </div>
-                  <div className="scd-fix-stat">
-                    <span className="scd-fix-stat-num red">6</span>
-                    <span className="scd-fix-stat-lbl">Spam trap</span>
-                  </div>
-                </div>
-              </div>
-            </article>
+            {/* ---------- Card 2: Verifyrit (animated list validation) ---------- */}
+            <StaleContactDataValidateCard />
 
-            {/* ---------- Card 3: Warmrit ---------- */}
-            <article className="scd-fix-card" data-reveal>
-              <div className="scd-fix-card-head">
-                <span className="scd-fix-num">3</span>
-                <span className="scd-fix-product">Warmrit</span>
-              </div>
-              <h3 className="scd-fix-title">Protect the domain</h3>
-              <p className="scd-fix-desc">
-                Warmrit keeps every sending domain at campaign-ready reputation, so cleaned lists
-                send from a position of strength &mdash; able to absorb the occasional bounce
-                without lasting damage.
-              </p>
-              <div className="scd-fix-demo">
-                <div className="scd-fix-demo-head">
-                  <span className="scd-fix-demo-eyebrow">Domain reputation</span>
-                  <span className="scd-fix-rep">98</span>
-                </div>
-                <div className="scd-fix-segs" aria-hidden="true">
-                  <span /><span /><span /><span /><span /><span /><span />
-                </div>
-                <div className="scd-fix-pill">
-                  <Icon name="check" aria-hidden="true" />
-                  Warmed &middot; ready to send
-                </div>
-              </div>
-            </article>
+            {/* ---------- Card 3: Warmrit (animated warming loop) ---------- */}
+            <StaleContactDataProtectCard />
 
-            {/* ---------- Card 4: Sendrit + NeoBrain ---------- */}
-            <article className="scd-fix-card" data-reveal>
-              <div className="scd-fix-card-head">
-                <span className="scd-fix-num">4</span>
-                <span className="scd-fix-product">Sendrit &bull; NeoBrain AI</span>
-              </div>
-              <h3 className="scd-fix-title">Only clean contacts send</h3>
-              <p className="scd-fix-desc">
-                Sendrit launches AI-personalized sequences to the right person, in the right role
-                &mdash; verified, signal-backed contacts, not whoever sat in the CRM eight months
-                ago.
-              </p>
-              <div className="scd-fix-demo">
-                <div className="scd-fix-seq">
-                  <div className="scd-fix-seq-row">
-                    <span className="scd-fix-seq-ic" aria-hidden="true"><Icon name="mail" /></span>
-                    <span className="scd-fix-seq-label">Email &middot; Day 1</span>
-                    <span className="scd-fix-seq-stat gray">Sent</span>
-                  </div>
-                  <div className="scd-fix-seq-row">
-                    <span className="scd-fix-seq-ic" aria-hidden="true"><Icon name="linkedin" /></span>
-                    <span className="scd-fix-seq-label">LinkedIn &middot; Day 3</span>
-                    <span className="scd-fix-seq-stat amber">Opened</span>
-                  </div>
-                  <div className="scd-fix-seq-row is-active">
-                    <span className="scd-fix-seq-ic" aria-hidden="true"><Icon name="message-circle" /></span>
-                    <span className="scd-fix-seq-label">Reply &middot; Day 6</span>
-                    <span className="scd-fix-seq-stat purple">Interested</span>
-                  </div>
-                </div>
-              </div>
-            </article>
+            {/* ---------- Card 4: Sendrit + NeoBrain (animated cadence loop) ---------- */}
+            <StaleContactDataSendCard />
 
-            {/* ---------- Card 5: Snaarpmail + NeoBrain ---------- */}
-            <article className="scd-fix-card" data-reveal>
-              <div className="scd-fix-card-head">
-                <span className="scd-fix-num">5</span>
-                <span className="scd-fix-product">Snaarpmail &bull; NeoBrain AI</span>
-              </div>
-              <h3 className="scd-fix-title">Monitor &amp; protect post-send</h3>
-              <p className="scd-fix-desc">
-                Snaarpmail auto-quarantines hard bounces and tracks domain health in real time
-                &mdash; so the team knows the moment something shifts, not four campaigns later.
-              </p>
-              <div className="scd-fix-demo">
-                <div className="scd-fix-stats2">
-                  <div className="scd-fix-mini">
-                    <span className="scd-fix-mini-num">0.3%</span>
-                    <span className="scd-fix-mini-lbl">Bounce rate</span>
-                  </div>
-                  <div className="scd-fix-mini">
-                    <span className="scd-fix-mini-num">0.04%</span>
-                    <span className="scd-fix-mini-lbl">Spam rate</span>
-                  </div>
-                </div>
-                <div className="scd-fix-alert">
-                  <span className="scd-fix-alert-msg">
-                    <span className="scd-fix-dot red" aria-hidden="true"></span>
-                    2 hard bounces detected
-                  </span>
-                  <span className="scd-fix-quar">Quarantined</span>
-                </div>
-                <div className="scd-fix-pill">
-                  <Icon name="check" aria-hidden="true" />
-                  Domain reputation: Healthy
-                </div>
-              </div>
-            </article>
+            {/* ---------- Card 5: Snaarpmail + NeoBrain (animated monitoring loop) ---------- */}
+            <StaleContactDataMonitorCard />
 
           </div>
         </div>
