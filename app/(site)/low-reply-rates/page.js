@@ -2,6 +2,14 @@ import Icon from '@/components/Icon';
 import ClientScripts from '@/components/ClientScripts';
 import LowReplyRatesScripts from '@/components/LowReplyRatesScripts';
 import LowReplyRatesCauses from '@/components/LowReplyRatesCauses';
+import LowReplyRatesCompare from '@/components/LowReplyRatesCompare';
+import LowReplyRatesTargetingCard from '@/components/LowReplyRatesTargetingCard';
+import LowReplyRatesDelivCard from '@/components/LowReplyRatesDelivCard';
+import LowReplyRatesFindPeopleCard from '@/components/LowReplyRatesFindPeopleCard';
+import LowReplyRatesCleanListCard from '@/components/LowReplyRatesCleanListCard';
+import LowReplyRatesWarmInboxCard from '@/components/LowReplyRatesWarmInboxCard';
+import LowReplyRatesSendFollowUpCard from '@/components/LowReplyRatesSendFollowUpCard';
+import LowReplyRatesHotReplyCard from '@/components/LowReplyRatesHotReplyCard';
 
 export const metadata = { title: 'Low Reply Rates | NeoLeads' };
 
@@ -39,115 +47,7 @@ export default function LowReplyRatesPage() {
       </section>
 
       {/* ===================== BEFORE / AFTER COMPARISON ===================== */}
-      <section className="lrr-compare">
-        <div className="container" data-reveal-stagger="120">
-          <p className="lrr-compare-label" data-reveal>The 4 Root Causes NeoLeads Fixes</p>
-
-          <div className="lrr-compare-grid">
-
-            {/* ---------- BEFORE ---------- */}
-            <article className="lrr-card" data-reveal>
-              <div className="lrr-card-head">
-                <span className="lrr-card-title">
-                  <span className="lrr-led red" aria-hidden="true"></span>
-                  Current Campaign
-                </span>
-                <span className="lrr-chip red">Before NeoLeads</span>
-              </div>
-
-              <div className="lrr-stats">
-                <div className="lrr-stat">
-                  <span className="lrr-stat-label">Sent</span>
-                  <span className="lrr-stat-num">840</span>
-                </div>
-                <div className="lrr-stat">
-                  <span className="lrr-stat-label">Open Rate</span>
-                  <span className="lrr-stat-num">24%</span>
-                </div>
-                <div className="lrr-stat is-reply red">
-                  <span className="lrr-stat-label red">Reply Rate</span>
-                  <span className="lrr-stat-num red">2.1%</span>
-                </div>
-                <div className="lrr-stat">
-                  <span className="lrr-stat-label">Meetings</span>
-                  <span className="lrr-stat-num">2</span>
-                </div>
-              </div>
-
-              <div className="lrr-deliver red">
-                <Icon name="triangle-alert" aria-hidden="true" />
-                14% landed in spam
-              </div>
-
-              <div className="lrr-replies">
-                <div className="lrr-reply">
-                  <span className="lrr-reply-dot red" aria-hidden="true"></span>
-                  &ldquo;Not interested&rdquo;
-                </div>
-                <div className="lrr-reply">
-                  <span className="lrr-reply-dot red" aria-hidden="true"></span>
-                  &ldquo;Unsubscribe&rdquo;
-                </div>
-                <div className="lrr-reply">
-                  <span className="lrr-reply-dot red" aria-hidden="true"></span>
-                  &ldquo;Wrong person&rdquo;
-                </div>
-              </div>
-            </article>
-
-            {/* ---------- AFTER ---------- */}
-            <article className="lrr-card is-after" data-reveal>
-              <div className="lrr-card-head">
-                <span className="lrr-card-title">
-                  <span className="lrr-led purple" aria-hidden="true"></span>
-                  With NeoLeads
-                </span>
-                <span className="lrr-chip purple">After NeoLeads</span>
-              </div>
-
-              <div className="lrr-stats">
-                <div className="lrr-stat">
-                  <span className="lrr-stat-label">Sent</span>
-                  <span className="lrr-stat-num">840</span>
-                </div>
-                <div className="lrr-stat">
-                  <span className="lrr-stat-label">Open Rate</span>
-                  <span className="lrr-stat-num">41%</span>
-                </div>
-                <div className="lrr-stat is-reply purple">
-                  <span className="lrr-stat-label purple">Reply Rate</span>
-                  <span className="lrr-stat-num purple">11.4%</span>
-                </div>
-                <div className="lrr-stat">
-                  <span className="lrr-stat-label">Meetings</span>
-                  <span className="lrr-stat-num">18</span>
-                </div>
-              </div>
-
-              <div className="lrr-deliver green">
-                <Icon name="check" aria-hidden="true" />
-                97% landed in primary inbox
-              </div>
-
-              <div className="lrr-replies">
-                <div className="lrr-reply">
-                  <span className="lrr-reply-dot green" aria-hidden="true"></span>
-                  &ldquo;This is great timing&hellip;&rdquo;
-                </div>
-                <div className="lrr-reply">
-                  <span className="lrr-reply-dot green" aria-hidden="true"></span>
-                  &ldquo;Happy to jump on a call&rdquo;
-                </div>
-                <div className="lrr-reply">
-                  <span className="lrr-reply-dot amber" aria-hidden="true"></span>
-                  &ldquo;Not now &mdash; follow up in Q2&rdquo;
-                </div>
-              </div>
-            </article>
-
-          </div>
-        </div>
-      </section>
+      <LowReplyRatesCompare />
 
       {/* ===================== METRICS / NUMBERS ===================== */}
       <section className="lrr-metrics">
@@ -239,44 +139,7 @@ export default function LowReplyRatesPage() {
             </div>
 
             {/* ---- right: targeted-contact card ---- */}
-            <div className="lrr-pp-card" data-reveal data-reveal-delay="150">
-              <div className="lrr-pp-card-top">
-                <span className="lrr-pp-eyebrow">Why this contact was targeted</span>
-                <span className="lrr-pp-zeus">Zeus</span>
-              </div>
-
-              <div className="lrr-pp-contact">
-                <span className="lrr-contact-av purple">MT</span>
-                <div className="lrr-pp-id">
-                  <div className="lrr-pp-name">Marcus T.</div>
-                  <div className="lrr-pp-role">VP Sales · Acme Corp</div>
-                </div>
-                <div className="lrr-pp-intent">
-                  <span className="lrr-pp-intent-num">94</span>
-                  <span className="lrr-pp-intent-lbl">High Intent</span>
-                </div>
-              </div>
-
-              <div className="lrr-pp-signals">
-                <span className="lrr-pp-sig">Raised $22M Series B · 9d ago</span>
-                <span className="lrr-pp-sig">9 SDR roles posted · 5d</span>
-                <span className="lrr-pp-sig">New CRO hired · 12d</span>
-              </div>
-
-              <div className="lrr-pp-divider" aria-hidden="true" />
-
-              <span className="lrr-pp-eyebrow purple">AI-Generated First Line</span>
-              <div className="lrr-pp-subject">Subject: Quick thought on scaling Acme&rsquo;s SDR team</div>
-              <p className="lrr-pp-quote">
-                &ldquo;Hi Marcus &mdash; saw Acme just brought on a new CRO and opened 9 SDR roles in
-                the same week. Most teams hiring that fast hit outbound pipeline walls before the new
-                reps are ramped&hellip;&rdquo;
-              </p>
-
-              <span className="lrr-pp-tag">
-                <Icon name="sparkles" aria-hidden="true" /> NeoBrain AI &mdash; researched from 3 signals
-              </span>
-            </div>
+            <LowReplyRatesTargetingCard />
           </div>
         </div>
       </section>
@@ -286,60 +149,7 @@ export default function LowReplyRatesPage() {
         <div className="container">
           <div className="lrr-df-layout">
             {/* ---- left: deliverability + sequence card ---- */}
-            <div className="lrr-deliv-card" data-reveal>
-              <div className="lrr-deliv-top">
-                <span className="lrr-deliv-title">Deliverability Status</span>
-                <span className="lrr-deliv-domain">outreach-nl.io</span>
-              </div>
-
-              <div className="lrr-deliv-pills">
-                <span className="lrr-deliv-pill green">SPF ✓</span>
-                <span className="lrr-deliv-pill green">DKIM ✓</span>
-                <span className="lrr-deliv-pill green">DMARC ✓</span>
-                <span className="lrr-deliv-pill purple">Warmrit: Warmed ✓</span>
-                <span className="lrr-deliv-pill gray">Bounce 0.4%</span>
-              </div>
-
-              <div className="lrr-deliv-bar" aria-hidden="true">
-                <span className="lrr-deliv-bar-fill" />
-              </div>
-              <div className="lrr-deliv-legend">
-                <span>96% Primary</span>
-                <span>3% Promotions</span>
-                <span>1% Spam</span>
-              </div>
-              <p className="lrr-deliv-note">Verifyrit: 480/480 contacts verified before send</p>
-
-              <div className="lrr-deliv-seqhead">Sendrit Sequence — Q3 Outreach</div>
-              <div className="lrr-seq2">
-                <div className="lrr-seq2-row">
-                  <span className="lrr-seq2-num">1</span>
-                  <span className="lrr-seq2-label">Email · Day 1 · 480 sent</span>
-                  <span className="lrr-seq2-replies">22 replies</span>
-                </div>
-                <div className="lrr-seq2-row">
-                  <span className="lrr-seq2-num">2</span>
-                  <span className="lrr-seq2-label">LinkedIn · Day 3 · no-reply trigger</span>
-                  <span className="lrr-seq2-replies">18 replies</span>
-                </div>
-                <div className="lrr-seq2-row">
-                  <span className="lrr-seq2-num">3</span>
-                  <span className="lrr-seq2-label">Email · Day 6 · opened, no reply</span>
-                  <span className="lrr-seq2-replies">14 replies</span>
-                </div>
-                <div className="lrr-seq2-row">
-                  <span className="lrr-seq2-num">4</span>
-                  <span className="lrr-seq2-label">Final email · Day 10</span>
-                  <span className="lrr-seq2-replies">7 replies</span>
-                </div>
-              </div>
-
-              <div className="lrr-deliv-foot">
-                <span>Total replies: <b>61</b></span>
-                <span className="purple">Reply rate 12.7%</span>
-                <span>Meetings: <b>19</b></span>
-              </div>
-            </div>
+            <LowReplyRatesDelivCard />
 
             {/* ---- right: copy + features ---- */}
             <div className="lrr-pp-text" data-reveal-stagger="100">
@@ -406,178 +216,19 @@ export default function LowReplyRatesPage() {
 
           <div className="lrr-fix-grid" data-reveal-stagger="120">
             {/* --- Card 1 --- */}
-            <article className="lrr-fix-card c-half" data-reveal>
-              <div className="lrr-fix-card-head">
-                <div className="lrr-fix-meta">
-                  <span className="lrr-fix-badge">1</span>
-                  <span className="lrr-fix-product">Zeus + NeoBrain AI</span>
-                </div>
-                <span className="lrr-fix-fixes">fixes · Wrong People</span>
-              </div>
-              <h3 className="lrr-fix-title">Find the right people</h3>
-              <p className="lrr-fix-desc">
-                AI search for verified decision-makers ranked by ICP fit and live buying signals.
-                Every contact surfaces with a &ldquo;why now&rdquo; attached.
-              </p>
-              <div className="lrr-fix-mock">
-                <div className="lrr-fixm-top">
-                  <span className="lrr-fixm-label">Top match in segment</span>
-                  <span className="lrr-pp-zeus">Zeus</span>
-                </div>
-                <div className="lrr-fixm-contact">
-                  <span className="lrr-contact-av purple">MT</span>
-                  <div className="lrr-fixm-id">
-                    <div className="lrr-fixm-name">Marcus T.</div>
-                    <div className="lrr-fixm-role">VP Sales · Acme Corp</div>
-                  </div>
-                  <div className="lrr-fixm-intent">
-                    <span className="lrr-fixm-intent-num">94</span>
-                    <span className="lrr-fixm-intent-lbl">Intent</span>
-                  </div>
-                </div>
-                <div className="lrr-fixm-sigs">
-                  <span className="lrr-pp-sig">Raised $22M · 9d</span>
-                  <span className="lrr-pp-sig">9 SDR roles · 5d</span>
-                  <span className="lrr-pp-sig">New CRO · 12d</span>
-                </div>
-              </div>
-            </article>
+            <LowReplyRatesFindPeopleCard />
 
             {/* --- Card 2 --- */}
-            <article className="lrr-fix-card c-half" data-reveal>
-              <div className="lrr-fix-card-head">
-                <div className="lrr-fix-meta">
-                  <span className="lrr-fix-badge">2</span>
-                  <span className="lrr-fix-product">Verifyrit</span>
-                </div>
-                <span className="lrr-fix-fixes">fixes · Bad List</span>
-              </div>
-              <h3 className="lrr-fix-title">Clean the list</h3>
-              <p className="lrr-fix-desc">
-                Every address runs through 7-layer validation before a campaign. Invalid emails,
-                catch-alls, and spam traps are removed before send.
-              </p>
-              <div className="lrr-fix-mock">
-                <div className="lrr-fixm-top">
-                  <span className="lrr-fixm-label">List health</span>
-                  <span className="lrr-fixm-count"><b>480</b>/480</span>
-                </div>
-                <div className="lrr-fixm-bar" aria-hidden="true">
-                  <span className="lrr-fixm-bar-fill" />
-                </div>
-                <div className="lrr-fixm-stats">
-                  <div className="lrr-fixm-stat">
-                    <span className="lrr-fixm-stat-num green">462</span>
-                    <span className="lrr-fixm-stat-lbl">Valid</span>
-                  </div>
-                  <div className="lrr-fixm-stat">
-                    <span className="lrr-fixm-stat-num">12</span>
-                    <span className="lrr-fixm-stat-lbl">Catch-all</span>
-                  </div>
-                  <div className="lrr-fixm-stat">
-                    <span className="lrr-fixm-stat-num red">6</span>
-                    <span className="lrr-fixm-stat-lbl">Spam trap</span>
-                  </div>
-                </div>
-              </div>
-            </article>
+            <LowReplyRatesCleanListCard />
 
             {/* --- Card 3 --- */}
-            <article className="lrr-fix-card c-third" data-reveal>
-              <div className="lrr-fix-card-head">
-                <div className="lrr-fix-meta">
-                  <span className="lrr-fix-badge">3</span>
-                  <span className="lrr-fix-product">Warmrit</span>
-                </div>
-              </div>
-              <h3 className="lrr-fix-title">Prepare the inbox</h3>
-              <p className="lrr-fix-desc">
-                Every sending domain is warmed to campaign-ready &mdash; building the reputation that
-                lands in primary, not spam.
-              </p>
-              <div className="lrr-fix-mock">
-                <div className="lrr-fixm-top">
-                  <span className="lrr-fixm-label">Domain reputation</span>
-                  <span className="lrr-fixm-rep">98</span>
-                </div>
-                <div className="lrr-fixm-dots" aria-hidden="true">
-                  <span className="on" /><span className="on" /><span className="on" />
-                  <span className="on" /><span className="on" /><span className="on" />
-                  <span className="on" /><span className="on" /><span className="on" />
-                  <span className="off" />
-                </div>
-                <span className="lrr-fixm-warmed">
-                  <Icon name="check" aria-hidden="true" /> Warmed · ready to send
-                </span>
-              </div>
-            </article>
+            <LowReplyRatesWarmInboxCard />
 
             {/* --- Card 4 --- */}
-            <article className="lrr-fix-card c-third" data-reveal>
-              <div className="lrr-fix-card-head">
-                <div className="lrr-fix-meta">
-                  <span className="lrr-fix-badge">4</span>
-                  <span className="lrr-fix-product">Sendrit + NeoBrain AI</span>
-                </div>
-              </div>
-              <h3 className="lrr-fix-title">Send &amp; follow up</h3>
-              <p className="lrr-fix-desc">
-                AI-researched, signal-backed sequences across email, LinkedIn, and calling &mdash;
-                follow-up responds to behaviour.
-              </p>
-              <div className="lrr-fix-mock">
-                <div className="lrr-fixm-seq">
-                  <div className="lrr-fixm-seq-row">
-                    <span className="lrr-fixm-seq-ic"><Icon name="mail" aria-hidden="true" /></span>
-                    <span className="lrr-fixm-seq-lbl">Email · Day 1</span>
-                    <span className="lrr-fixm-seq-st gray">sent</span>
-                  </div>
-                  <div className="lrr-fixm-seq-row">
-                    <span className="lrr-fixm-seq-ic"><Icon name="linkedin" aria-hidden="true" /></span>
-                    <span className="lrr-fixm-seq-lbl">LinkedIn · Day 3</span>
-                    <span className="lrr-fixm-seq-st orange">opened</span>
-                  </div>
-                  <div className="lrr-fixm-seq-row is-active">
-                    <span className="lrr-fixm-seq-ic purple"><Icon name="check" aria-hidden="true" /></span>
-                    <span className="lrr-fixm-seq-lbl">Reply · Day 6</span>
-                    <span className="lrr-fixm-seq-st purple">Interested</span>
-                  </div>
-                </div>
-              </div>
-            </article>
+            <LowReplyRatesSendFollowUpCard />
 
             {/* --- Card 5 --- */}
-            <article className="lrr-fix-card c-third" data-reveal>
-              <div className="lrr-fix-card-head">
-                <div className="lrr-fix-meta">
-                  <span className="lrr-fix-badge">5</span>
-                  <span className="lrr-fix-product">Snaarpmail + NeoBrain AI</span>
-                </div>
-              </div>
-              <h3 className="lrr-fix-title">Never miss a hot reply</h3>
-              <p className="lrr-fix-desc">
-                Every reply is classified by intent before a human opens it. Sequences auto-pause the
-                moment a prospect responds.
-              </p>
-              <div className="lrr-fix-mock">
-                <div className="lrr-fixm-replies">
-                  <div className="lrr-fixm-reply">
-                    <span className="lrr-fixm-reply-dot green" />
-                    <span className="lrr-fixm-reply-q">&ldquo;This is great timing&hellip;&rdquo;</span>
-                    <span className="lrr-fixm-reply-tag hot">Hot</span>
-                  </div>
-                  <div className="lrr-fixm-reply">
-                    <span className="lrr-fixm-reply-dot amber" />
-                    <span className="lrr-fixm-reply-q">&ldquo;Follow up in Q2&rdquo;</span>
-                    <span className="lrr-fixm-reply-tag nurture">Nurture</span>
-                  </div>
-                  <div className="lrr-fixm-reply is-muted">
-                    <span className="lrr-fixm-reply-ic"><Icon name="refresh-cw" aria-hidden="true" /></span>
-                    <span className="lrr-fixm-reply-q">Sequence auto-paused on reply</span>
-                  </div>
-                </div>
-              </div>
-            </article>
+            <LowReplyRatesHotReplyCard />
           </div>
         </div>
       </section>
