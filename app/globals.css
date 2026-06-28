@@ -12038,3 +12038,45 @@
   @media (min-width: 1200px) {
     .els-sum-head h2 { font-size: 38px; }
   }
+
+  /* =========================================================
+     SOLUTIONS PAGES — align content with the navbar/logo on
+     large screens.
+
+     The product pages (e.g. Zeus) let their grids (.bento,
+     .split) fill `.container`, so content lines up with the
+     logo at every width. The solutions pages instead capped
+     each content grid at 920–1120px and centred it — fine until
+     `.container` grows past ~1260px (≥1280 / 1440 / 1600), after
+     which the centred grids drift inward and no longer align
+     with the logo edge.
+
+     From 1280px up, release those caps so the content grids fill
+     `.container` like the product pages do. Section *headers*
+     (.lrr-*-head / .scd-*-head / .els-*-head) intentionally stay
+     narrow — they mirror `.section-head` and remain centred.
+  ========================================================= */
+  @media (min-width: 1280px) {
+    .lrr-compare-grid,
+    .lrr-metrics-grid,
+    .lrr-causes-layout,
+    .lrr-pp-layout,
+    .lrr-df-layout,
+    .lrr-fix-grid,
+    .lrr-sum-grid,
+    .scd-compare-grid,
+    .scd-metrics-grid,
+    .scd-causes-layout,
+    .scd-deep-grid,
+    .scd-fix-grid,
+    .scd-pipe-grid,
+    .els-compare-grid,
+    .els-metrics-grid,
+    .els-causes-layout,
+    .els-pp-layout,
+    .els-df-layout,
+    .els-fix-grid,
+    .els-sum-grid {
+      max-width: none;
+    }
+  }
