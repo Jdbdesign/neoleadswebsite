@@ -2,6 +2,8 @@ import Icon from '@/components/Icon';
 import ClientScripts from '@/components/ClientScripts';
 import EmailsSpamScripts from '@/components/EmailsSpamScripts';
 import EmailsSpamCauses from '@/components/EmailsSpamCauses';
+import EmailsSpamSetupCard from '@/components/EmailsSpamSetupCard';
+import EmailsSpamMonitorCard from '@/components/EmailsSpamMonitorCard';
 
 export const metadata = { title: 'Emails Landing in Spam | NeoLeads' };
 
@@ -236,67 +238,8 @@ export default function EmailsLandingInSpamPage() {
               </div>
             </div>
 
-            {/* ---- right: domain setup card ---- */}
-            <div className="els-setup" data-reveal data-reveal-delay="150">
-              <div className="els-setup-top">
-                <span className="els-setup-eyebrow">Domain Setup: outreach-nl.io</span>
-                <span className="els-setup-badge">Snaarpmail</span>
-              </div>
-
-              <div className="els-setup-rows">
-                <div className="els-setup-row">
-                  <span className="els-setup-check"><Icon name="check" aria-hidden="true" /></span>
-                  <div className="els-setup-rec">
-                    <div className="els-setup-name">SPF</div>
-                    <div className="els-setup-detail">v=spf1 include:_spf &middot; ~all &mdash; Auto-configured</div>
-                  </div>
-                </div>
-                <div className="els-setup-row">
-                  <span className="els-setup-check"><Icon name="check" aria-hidden="true" /></span>
-                  <div className="els-setup-rec">
-                    <div className="els-setup-name">DKIM</div>
-                    <div className="els-setup-detail">2048-bit key &mdash; Active</div>
-                  </div>
-                </div>
-                <div className="els-setup-row">
-                  <span className="els-setup-check"><Icon name="check" aria-hidden="true" /></span>
-                  <div className="els-setup-rec">
-                    <div className="els-setup-name">DMARC</div>
-                    <div className="els-setup-detail">p=quarantine &mdash; Enforced</div>
-                  </div>
-                </div>
-              </div>
-
-              <span className="els-setup-pill">
-                <Icon name="check" aria-hidden="true" /> Authentication complete
-              </span>
-
-              <div className="els-setup-divider" aria-hidden="true" />
-
-              <div className="els-setup-warmhead">
-                <span className="els-setup-warmlabel">Warmup Progress &mdash; Warmrit</span>
-                <span className="els-setup-warmbadge">96 &middot; Inbox-Ready</span>
-              </div>
-
-              <div className="els-warm-track" aria-hidden="true">
-                <span className="els-warm-line" />
-                <span className="els-warm-node on" />
-                <span className="els-warm-node on" />
-                <span className="els-warm-node on" />
-                <span className="els-warm-node done" />
-              </div>
-              <div className="els-warm-legend">
-                <span>d 1&ndash;10</span>
-                <span>d 11&ndash;25</span>
-                <span>d 26&ndash;45</span>
-                <span>d 46&ndash;90</span>
-              </div>
-
-              <div className="els-setup-foot">
-                <Icon name="check" aria-hidden="true" />
-                Sendrit: Cleared &mdash; campaign authorised to launch
-              </div>
-            </div>
+            {/* ---- right: domain setup card (always-on warmup animation) ---- */}
+            <EmailsSpamSetupCard />
           </div>
         </div>
       </section>
@@ -305,72 +248,8 @@ export default function EmailsLandingInSpamPage() {
       <section className="els-df">
         <div className="container">
           <div className="els-df-layout">
-            {/* ---- left: inbox placement monitor card ---- */}
-            <div className="els-monitor" data-reveal>
-              <div className="els-monitor-top">
-                <span className="els-monitor-title">Inbox Placement Monitor</span>
-                <span className="els-monitor-live">
-                  <span className="els-monitor-dot" aria-hidden="true" /> Snaarpmail · live
-                </span>
-              </div>
-
-              <div className="els-mon-rows">
-                <div className="els-mon-row">
-                  <div className="els-mon-row-head">
-                    <span className="els-mon-prov">Gmail</span>
-                    <span className="els-mon-stat green">96% Primary <Icon name="check" aria-hidden="true" /></span>
-                  </div>
-                  <div className="els-mon-bar">
-                    <span className="seg primary" style={{ width: '96%' }} />
-                    <span className="seg spam" style={{ width: '4%' }} />
-                  </div>
-                </div>
-
-                <div className="els-mon-row">
-                  <div className="els-mon-row-head">
-                    <span className="els-mon-prov">Outlook</span>
-                    <span className="els-mon-stat green">93% Primary <Icon name="check" aria-hidden="true" /></span>
-                  </div>
-                  <div className="els-mon-bar">
-                    <span className="seg primary" style={{ width: '93%' }} />
-                    <span className="seg spam" style={{ width: '7%' }} />
-                  </div>
-                </div>
-
-                <div className="els-mon-row">
-                  <div className="els-mon-row-head">
-                    <span className="els-mon-prov">Yahoo</span>
-                    <span className="els-mon-stat amber">91% Primary <Icon name="triangle-alert" aria-hidden="true" /></span>
-                  </div>
-                  <div className="els-mon-bar">
-                    <span className="seg primary" style={{ width: '91%' }} />
-                    <span className="seg spam" style={{ width: '9%' }} />
-                  </div>
-                </div>
-              </div>
-
-              <div className="els-mon-meta">
-                <span className="els-mon-note">Monitoring — within safe range</span>
-                <span className="els-mon-stats">Spam complaints: 0.06% · 0 blacklists</span>
-              </div>
-
-              <div className="els-mon-verify">
-                <div className="els-mon-verify-top">
-                  <span className="els-mon-verify-title">Verifyrit — Pre-Campaign Check</span>
-                  <span className="els-mon-verify-count">820 checked</span>
-                </div>
-                <div className="els-mon-chips">
-                  <span className="els-mon-chip green"><b>761</b> Deliverable</span>
-                  <span className="els-mon-chip red"><b>41</b> Invalid</span>
-                  <span className="els-mon-chip amber"><b>18</b> Risky</span>
-                  <span className="els-mon-chip gray"><b>0</b> Spam Trap</span>
-                </div>
-                <div className="els-mon-verify-foot">
-                  <span>Bounce forecast: <b className="green">0.3%</b> <span className="els-mon-down">↓ from 7.2%</span></span>
-                  <span className="els-mon-route">761 → Sendrit</span>
-                </div>
-              </div>
-            </div>
+            {/* ---- left: inbox placement monitor card (always-on live monitor) ---- */}
+            <EmailsSpamMonitorCard />
 
             {/* ---- right: copy + features ---- */}
             <div className="els-pp-text" data-reveal-stagger="100">
