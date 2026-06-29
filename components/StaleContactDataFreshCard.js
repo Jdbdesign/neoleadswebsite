@@ -578,9 +578,9 @@ export default function StaleContactDataFreshCard() {
         <span className="scd-fix-product">Zeus &bull; NeoBrain AI</span>
         <span className="scd-fix-tag">Fixes &middot; Static List</span>
       </div>
-      <h3 className="scd-fix-title" style={o(250, 350, 8)}>Start fresh &mdash; every time</h3>
+      <h3 className="scd-fix-title" style={o(250, 350, 8)}>Start fresh, every time</h3>
       <p className="scd-fix-desc" style={o(380, 350, 8)}>
-        Every Zeus search returns continuously refreshed, signal-verified contacts &mdash;
+        Every Zeus search returns continuously refreshed, signal-verified contacts,
         not a static export. NeoBrain AI flags stale records and surfaces replacements
         before they cause damage.
       </p>

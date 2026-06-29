@@ -21,7 +21,7 @@ export default function EmailsLandingInSpamPage() {
           </h1>
           <p className="els-sub" data-reveal>
             Since 2024&ndash;2025, Gmail, Yahoo, and Microsoft require every bulk sender to have
-            SPF, DKIM, and DMARC in place &mdash; and now reject unauthenticated mail outright. A
+            SPF, DKIM, and DMARC in place, and now reject unauthenticated mail outright. A
             cold inbox, a stale list, or a single missing DNS record is enough to make your entire
             campaign invisible before a single prospect reads word one.
           </p>
@@ -84,11 +84,11 @@ export default function EmailsLandingInSpamPage() {
                 </div>
                 <div className="els-row">
                   <Icon name="triangle-alert" aria-hidden="true" />
-                  <span>Domain age: 11 days &mdash; ISP trust: <b>Low</b></span>
+                  <span>Domain age: 11 days, ISP trust: <b>Low</b></span>
                 </div>
                 <div className="els-row">
                   <Icon name="triangle-alert" aria-hidden="true" />
-                  <span>List bounce rate: 7.2% &mdash; Sender reputation: <b className="red">Damaged</b></span>
+                  <span>List bounce rate: 7.2%, Sender reputation: <b className="red">Damaged</b></span>
                 </div>
               </div>
             </article>
@@ -129,15 +129,15 @@ export default function EmailsLandingInSpamPage() {
                 </div>
                 <div className="els-row green">
                   <Icon name="check" aria-hidden="true" />
-                  <span>SPF &check; &middot; DKIM &check; &middot; DMARC &check; &mdash; Auto-configured by Snaarpmail</span>
+                  <span>SPF &check; &middot; DKIM &check; &middot; DMARC &check;, Auto-configured by Snaarpmail</span>
                 </div>
                 <div className="els-row green">
                   <Icon name="check" aria-hidden="true" />
-                  <span>Warmrit: Domain warmed 28 days &mdash; ISP trust: <b>Strong</b></span>
+                  <span>Warmrit: Domain warmed 28 days, ISP trust: <b>Strong</b></span>
                 </div>
                 <div className="els-row green">
                   <Icon name="check" aria-hidden="true" />
-                  <span>Verifyrit: 0.3% bounce rate &mdash; Sender reputation: <b className="green">Healthy</b></span>
+                  <span>Verifyrit: 0.3% bounce rate, Sender reputation: <b className="green">Healthy</b></span>
                 </div>
               </div>
             </article>
@@ -196,14 +196,14 @@ export default function EmailsLandingInSpamPage() {
             {/* ---- left: copy + features ---- */}
             <div className="els-pp-text" data-reveal-stagger="100">
               <span className="els-pp-label" data-reveal>
-                Root Cause 1 + 2 &mdash; Authentication &amp; Warmup
+                Root Cause 1 + 2: Authentication &amp; Warmup
               </span>
               <h2 data-reveal>
                 Authentication and Warmup Aren&rsquo;t Optional Anymore. They&rsquo;re the Floor.
               </h2>
               <p className="els-pp-lead" data-reveal>
                 Before 2024, missing authentication was a deliverability risk. Since 2024&ndash;2025
-                enforcement by Gmail, Yahoo, and Microsoft, it&rsquo;s a hard rejection &mdash; your
+                enforcement by Gmail, Yahoo, and Microsoft, it&rsquo;s a hard rejection, your
                 email doesn&rsquo;t land in spam, it never leaves the server. Snaarpmail handles
                 authentication automatically the moment a domain is connected. Warmrit handles the
                 sender reputation that authentication alone can&rsquo;t build.
@@ -216,7 +216,7 @@ export default function EmailsLandingInSpamPage() {
                     <h4>Automatic DNS Authentication</h4>
                     <p>
                       Every domain connected to NeoLeads gets SPF, DKIM, and DMARC configured
-                      automatically by Snaarpmail &mdash; no manual DNS editing, no waiting on IT, no
+                      automatically by Snaarpmail, no manual DNS editing, no waiting on IT, no
                       misconfigured records discovered three campaigns in. Set up correctly the first
                       time and monitored for validity on an ongoing basis.
                     </p>
@@ -230,7 +230,7 @@ export default function EmailsLandingInSpamPage() {
                     <p>
                       Warmrit runs a gradual ramp schedule calibrated to each domain&rsquo;s age and
                       reputation before Sendrit ever launches a campaign over it. New domains
-                      don&rsquo;t send at full volume on Day 1 &mdash; they build ISP trust over
+                      don&rsquo;t send at full volume on Day 1, they build ISP trust over
                       3&ndash;4 weeks, then maintain it continuously throughout active campaigns.
                     </p>
                   </div>
@@ -254,17 +254,17 @@ export default function EmailsLandingInSpamPage() {
             {/* ---- right: copy + features ---- */}
             <div className="els-pp-text" data-reveal-stagger="100">
               <span className="els-pp-label neutral" data-reveal>
-                Root Cause 3 + 4 &mdash; List Hygiene &amp; Real-Time Monitoring
+                Root Cause 3 + 4: List Hygiene &amp; Real-Time Monitoring
               </span>
               <h2 data-reveal>
                 Clean the List Before You Send. Watch the Domain While You Do.
               </h2>
               <p className="els-pp-lead" data-reveal>
                 A well-authenticated, warm domain can still take a deliverability hit from a stale
-                list &mdash; one bad batch of hard bounces pushes the rate above the safe threshold,
+                list, one bad batch of hard bounces pushes the rate above the safe threshold,
                 and weeks of warmup start to erode. Verifyrit removes the risk before campaigns
                 launch. Snaarpmail watches placement metrics in real time so your team knows the
-                moment something shifts &mdash; not after the damage is done.
+                moment something shifts, not after the damage is done.
               </p>
 
               <div className="els-pp-feats" data-reveal>
@@ -274,7 +274,7 @@ export default function EmailsLandingInSpamPage() {
                     <h4>7-Layer List Validation Before Every Send</h4>
                     <p>
                       Every address entering a Sendrit campaign passes through Verifyrit&rsquo;s full
-                      validation stack &mdash; syntax, domain health, MX records, SMTP, catch-all
+                      validation stack: syntax, domain health, MX records, SMTP, catch-all
                       resolution, spam-trap detection, and disposable-email filtering. Not just on
                       the first import. Before every campaign.
                     </p>
@@ -286,8 +286,8 @@ export default function EmailsLandingInSpamPage() {
                   <div className="els-pp-feat-body">
                     <h4>Real-Time Inbox Placement Monitoring</h4>
                     <p>
-                      Snaarpmail tracks exactly where emails are landing &mdash; primary, promotions,
-                      or spam &mdash; broken out by provider, updated in real time during live
+                      Snaarpmail tracks exactly where emails are landing, primary, promotions,
+                      or spam, broken out by provider, updated in real time during live
                       campaigns. If spam placement spikes above the safe threshold, an alert fires
                       immediately so your team can pause, investigate, and correct before reputation
                       takes lasting damage.
@@ -313,7 +313,7 @@ export default function EmailsLandingInSpamPage() {
               End to End
             </h2>
             <p data-reveal>
-              Each product eliminates one layer of the spam problem &mdash; connected so the
+              Each product eliminates one layer of the spam problem, connected so the
               protection runs automatically, without anyone needing to remember to run a
               deliverability check before every campaign.
             </p>
@@ -332,7 +332,7 @@ export default function EmailsLandingInSpamPage() {
               <h3 className="els-fix-title">Remove bounce triggers first</h3>
               <p className="els-fix-desc">
                 Every contact entering a campaign is validated through 7 layers. Invalid addresses,
-                spam traps, and risky accounts are removed before they can damage reputation &mdash;
+                spam traps, and risky accounts are removed before they can damage reputation,
                 bounce forecast drops from double digits to under 0.5%.
               </p>
               <div className="els-fix-mock">
@@ -373,7 +373,7 @@ export default function EmailsLandingInSpamPage() {
               <p className="els-fix-desc">
                 The moment a sending domain is connected, Snaarpmail provisions SPF, DKIM, and DMARC
                 automatically. No manual DNS editing, no misconfigured records found three campaigns
-                in. Authentication is the non-negotiable floor &mdash; handled first.
+                in. Authentication is the non-negotiable floor, handled first.
               </p>
               <div className="els-fix-mock">
                 <div className="els-fixm-top">
@@ -409,7 +409,7 @@ export default function EmailsLandingInSpamPage() {
               <h3 className="els-fix-title">Build the reputation</h3>
               <p className="els-fix-desc">
                 Authentication proves identity; warmup builds trust. Warmrit runs a calibrated ramp
-                over 3&ndash;4 weeks before any campaign fires, then maintains it throughout &mdash;
+                over 3&ndash;4 weeks before any campaign fires, then maintains it throughout,
                 the reputation authentication alone can&rsquo;t create.
               </p>
               <div className="els-fix-mock">
@@ -441,7 +441,7 @@ export default function EmailsLandingInSpamPage() {
               <h3 className="els-fix-title">Pass the AI filter test</h3>
               <p className="els-fix-desc">
                 NeoBrain AI researches each prospect and writes a signal-backed first line before
-                Sendrit builds the sequence &mdash; outreach that reads like a human, not a template
+                Sendrit builds the sequence, outreach that reads like a human, not a template
                 Gmail&rsquo;s LLM detects in milliseconds.
               </p>
               <div className="els-fix-mock">
@@ -474,7 +474,7 @@ export default function EmailsLandingInSpamPage() {
               <h3 className="els-fix-title">Monitor placement live</h3>
               <p className="els-fix-desc">
                 Inbox placement, spam-complaint rate, and reputation signals are tracked live through
-                every campaign. Alerts fire the moment a metric drifts toward the danger zone &mdash;
+                every campaign. Alerts fire the moment a metric drifts toward the danger zone,
                 before a hit compounds across future sends.
               </p>
               <div className="els-fix-mock">
@@ -516,7 +516,7 @@ export default function EmailsLandingInSpamPage() {
               That Fixes Them All.
             </h2>
             <p data-reveal>
-              Each NeoLeads product targets a specific layer of the spam placement problem &mdash;
+              Each NeoLeads product targets a specific layer of the spam placement problem,
               and because they&rsquo;re connected, the protection is automatic rather than a manual
               checklist before every campaign.
             </p>
@@ -531,8 +531,8 @@ export default function EmailsLandingInSpamPage() {
                 <span className="els-sum-chip">Warmrit</span>
               </div>
               <p className="els-sum-desc">
-                Snaarpmail auto-configures SPF, DKIM, and DMARC for every connected sending domain
-                &mdash; the authentication Gmail, Yahoo, and Microsoft now require. Warmrit builds the
+                Snaarpmail auto-configures SPF, DKIM, and DMARC for every connected sending domain,
+                the authentication Gmail, Yahoo, and Microsoft now require. Warmrit builds the
                 sender reputation authentication alone can&rsquo;t create, gradually and continuously,
                 before and during every active campaign.
               </p>

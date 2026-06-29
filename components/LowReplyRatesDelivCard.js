@@ -291,7 +291,7 @@ export default function LowReplyRatesDelivCard() {
       />
 
       <div className="lrr-deliv-seqhead" style={fade(seqHeadIn, 350, 'translateY(6px)')}>
-        Sendrit Sequence — Q3 Outreach
+        Sendrit Sequence: Q3 Outreach
       </div>
 
       <div className="lrr-seq2">

@@ -208,7 +208,7 @@ export default function EmailsSpamMonitorCard() {
         cache.yaPulse = yaPulse;
         if (yaIconRef.current) yaIconRef.current.style.animation = yaPulse ? 'esscmWarn 800ms ease-in-out infinite' : 'none';
       }
-      const note = yaSub < 3500 ? 'Yahoo — monitoring closely' : 'Monitoring — within safe range';
+      const note = yaSub < 3500 ? 'Yahoo: monitoring closely' : 'Monitoring: within safe range';
       if (note !== cache.note) {
         if (cache.note === null) {
           if (noteRef.current) noteRef.current.textContent = note;
@@ -421,7 +421,7 @@ export default function EmailsSpamMonitorCard() {
 
       <div className="els-mon-meta">
         <span className="els-mon-note" ref={noteRef} style={{ display: 'inline-block' }}>
-          Monitoring — within safe range
+          Monitoring: within safe range
         </span>
         <span className="els-mon-stats">
           Spam complaints:{' '}
@@ -431,7 +431,7 @@ export default function EmailsSpamMonitorCard() {
 
       <div className="els-mon-verify" ref={verifyPanelRef}>
         <div className="els-mon-verify-top">
-          <span className="els-mon-verify-title">Verifyrit — Pre-Campaign Check</span>
+          <span className="els-mon-verify-title">Verifyrit: Pre-Campaign Check</span>
           <span className="els-mon-verify-count" ref={checkedRef}>820 checked</span>
         </div>
         <div className="els-mon-chips">

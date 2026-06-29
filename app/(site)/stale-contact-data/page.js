@@ -30,14 +30,14 @@ export default function StaleContactDataPage() {
             Every Year. While You Sleep.
           </h1>
           <p className="scd-sub" data-reveal>
-            B2B contact data decays at 22.5% annually &mdash; and it&rsquo;s accelerating. Every
+            B2B contact data decays at 22.5% annually, and it&rsquo;s accelerating. Every
             stale address your team reaches out to wastes a sequence slot, burns domain
             reputation, and sends AI-powered personalization to entirely the wrong person.
             The fix isn&rsquo;t a quarterly cleanup. It&rsquo;s a pipeline that never lets stale
             data in.
           </p>
           <div className="scd-ctas" data-reveal>
-            <button className="btn-primary">Clean My Data &mdash; Free</button>
+            <button className="btn-primary">Clean My Data: Free</button>
             <button className="btn-light">See How NeoLeads Keeps Data Fresh</button>
           </div>
           <p className="scd-microcopy" data-reveal>
@@ -71,7 +71,7 @@ export default function StaleContactDataPage() {
 
             <div className="scd-metric" data-reveal>
               <div className="scd-metric-num" data-to="546" data-decimals="0" data-suffix=" hrs">546 hrs</div>
-              <p className="scd-metric-desc">Per rep per year wasted chasing stale data &mdash; 13 working weeks</p>
+              <p className="scd-metric-desc">Per rep per year wasted chasing stale data, 13 working weeks</p>
               <span className="scd-metric-src">Salesmotion 2026</span>
             </div>
 
@@ -99,11 +99,11 @@ export default function StaleContactDataPage() {
 
             {/* ---------- copy ---------- */}
             <div className="scd-deep-copy" data-reveal>
-              <span className="scd-deep-eyebrow">Root Cause 1 + 3 &mdash; Static Data &amp; CRM Rot</span>
+              <span className="scd-deep-eyebrow">Root Cause 1 + 3: Static Data &amp; CRM Rot</span>
               <h2 className="scd-deep-title">A Database Is a Perishable<br />Good. Treat It Like One.</h2>
               <p className="scd-deep-lead">
-                The standard approach &mdash; buy a list, import it, use it until bounce rates spike
-                &mdash; treats contact data like a one-time purchase. But data isn&rsquo;t
+                The standard approach, buy a list, import it, use it until bounce rates spike,
+                treats contact data like a one-time purchase. But data isn&rsquo;t
                 infrastructure. It&rsquo;s inventory. At 2.1% monthly decay, a list you imported six
                 months ago has already lost more than 12% of its usable contacts before your team
                 touches it. Zeus gives you a continuously refreshed map of your market; NeoBrain AI
@@ -117,7 +117,7 @@ export default function StaleContactDataPage() {
                   <div className="scd-deep-feature-body">
                     <h3>Always-Fresh Source Data</h3>
                     <p>
-                      Every Zeus search returns contacts verified against current records &mdash;
+                      Every Zeus search returns contacts verified against current records,
                       not a cached export that was accurate last quarter. Buying signals refresh
                       continuously, so the list you pull today reflects today&rsquo;s market.
                     </p>
@@ -129,7 +129,7 @@ export default function StaleContactDataPage() {
                     <h3>CRM Enrichment on Autopilot</h3>
                     <p>
                       NeoBrain AI monitors your existing contacts for role changes, company events,
-                      and signal shifts &mdash; flagging stale records and surfacing replacements
+                      and signal shifts, flagging stale records and surfacing replacements
                       before they cause a bounce or a wasted sequence. Your CRM stays accurate
                       without a weekly manual review.
                     </p>
@@ -159,7 +159,7 @@ export default function StaleContactDataPage() {
 
             {/* ---------- copy ---------- */}
             <div className="scd-deep-copy" data-reveal>
-              <span className="scd-deep-eyebrow">Root Cause 2 + 4 &mdash; Deliverability &amp; Follow-Up</span>
+              <span className="scd-deep-eyebrow">Root Cause 2 + 4: Deliverability &amp; Follow-Up</span>
               <h2 className="scd-deep-title">Verify Before You Send.<br />Protect Before You&rsquo;re Penalised.</h2>
               <p className="scd-deep-lead">
                 Every hard bounce above a 2% rate signals inbox providers that your domain is a
@@ -176,7 +176,7 @@ export default function StaleContactDataPage() {
                     <h3>7-Layer Validation Before Every Send</h3>
                     <p>
                       Syntax, domain health, MX records, SMTP check, catch-all resolution,
-                      spam-trap detection, and disposable-email flagging &mdash; every address in
+                      spam-trap detection, and disposable-email flagging, every address in
                       every list is checked on every campaign launch, not just the first time the
                       list is imported.
                     </p>
@@ -188,7 +188,7 @@ export default function StaleContactDataPage() {
                     <h3>Continuous Post-Send Monitoring</h3>
                     <p>
                       Snaarpmail watches bounce rates and spam-complaint rates in real time during
-                      live campaigns &mdash; auto-quarantining contacts that generate hard bounces
+                      live campaigns, auto-quarantining contacts that generate hard bounces
                       and alerting your team before domain reputation takes a measurable hit.
                     </p>
                   </div>
@@ -213,7 +213,7 @@ export default function StaleContactDataPage() {
               Fresh End to End
             </h2>
             <p data-reveal>
-              Five products, each eliminating one layer of the stale data problem &mdash; connected
+              Five products, each eliminating one layer of the stale data problem, connected
               so the fix runs automatically rather than requiring five manual hygiene checks before
               every campaign.
             </p>
@@ -267,8 +267,8 @@ export default function StaleContactDataPage() {
                 <span className="scd-pipe-pill">NeoBrain AI</span>
               </div>
               <p className="scd-pipe-desc">
-                Zeus provides continuously refreshed contacts verified against live market signals
-                &mdash; not a snapshot that starts decaying the moment you download it. NeoBrain AI
+                Zeus provides continuously refreshed contacts verified against live market signals,
+                not a snapshot that starts decaying the moment you download it. NeoBrain AI
                 watches your existing records for job changes, company events, and role shifts,
                 flagging stale contacts and surfacing replacements automatically.
               </p>
@@ -285,7 +285,7 @@ export default function StaleContactDataPage() {
               </div>
               <p className="scd-pipe-desc">
                 Every contact entering a Sendrit campaign is validated through 7 layers before a
-                sequence fires. Verifyrit runs on every campaign, not just the first import &mdash;
+                sequence fires. Verifyrit runs on every campaign, not just the first import,
                 so a list checked in January is re-checked before the April campaign without anyone
                 needing to remember to run it.
               </p>
@@ -303,7 +303,7 @@ export default function StaleContactDataPage() {
               </div>
               <p className="scd-pipe-desc">
                 Snaarpmail auto-quarantines hard bounces and tracks domain health metrics in real
-                time &mdash; so the team knows immediately when something shifts. Warmrit maintains
+                time, so the team knows immediately when something shifts. Warmrit maintains
                 the sender reputation that protects deliverability even when occasional stale
                 contacts slip through.
               </p>
@@ -382,7 +382,7 @@ export default function StaleContactDataPage() {
         <div className="container" data-reveal-stagger="100">
           <span className="section-label" data-reveal>GET STARTED</span>
           <h2 data-reveal>Ready to Keep Your<br />Data Fresh for Good?</h2>
-          <p data-reveal>Stop burning sequence slots and sender reputation on contacts who moved on months ago.<br />Let NeoLeads verify, enrich, and re-score your list continuously &mdash; automatically.</p>
+          <p data-reveal>Stop burning sequence slots and sender reputation on contacts who moved on months ago.<br />Let NeoLeads verify, enrich, and re-score your list continuously, automatically.</p>
           <div className="final-buttons" data-reveal>
             <button className="btn-primary">Clean My Data Free <Icon name="arrow-right" /></button>
             <button className="btn-ghost">Book a Demo</button>

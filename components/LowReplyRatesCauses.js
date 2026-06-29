@@ -19,28 +19,28 @@ const CAUSES = [
     title: 'Wrong People',
     short: 'A great message to the wrong person is still ignored.',
     long: "You're reaching contacts who changed jobs last quarter, companies that don't fit your ICP, or decision-makers with no buying reason right now. A great message to the wrong person is still ignored.",
-    fix: 'Zeus + NeoBrain AI — verified, signal-ranked decision-makers with a “why now” attached.',
+    fix: 'Zeus + NeoBrain AI: verified, signal-ranked decision-makers with a “why now” attached.',
   },
   {
     icon: 'mail',
     title: 'Emails Never Arriving',
     short: "You can't get a reply to an email that landed in spam.",
-    long: '17% of cold emails never reach the inbox — missing authentication, unwarmed domains, or stale lists full of invalid addresses. You can’t get a reply to an email that landed in spam.',
-    fix: 'Verifyrit + Warmrit + Snaarpmail — clean lists, warmed domains, proper authentication.',
+    long: '17% of cold emails never reach the inbox, missing authentication, unwarmed domains, or stale lists full of invalid addresses. You can’t get a reply to an email that landed in spam.',
+    fix: 'Verifyrit + Warmrit + Snaarpmail: clean lists, warmed domains, proper authentication.',
   },
   {
     icon: 'copy',
     title: 'Outreach That Reads Like a Template',
     short: 'Generic outreach gets deleted before the second sentence.',
-    long: 'Buyers spot a mail-merge from the first line. Templates with a name and company swapped in get deleted before the second sentence — they prove you never looked at who you were writing to.',
-    fix: "Sendrit + NeoBrain AI — openers researched and written from each prospect's real buying signals, at scale.",
+    long: 'Buyers spot a mail-merge from the first line. Templates with a name and company swapped in get deleted before the second sentence, they prove you never looked at who you were writing to.',
+    fix: "Sendrit + NeoBrain AI: openers researched and written from each prospect's real buying signals, at scale.",
   },
   {
     icon: 'repeat',
     title: 'Follow-Up That Gives Up Too Soon',
     short: 'Most teams send one email, maybe two, then move on.',
-    long: "Most replies land after the first email, but most teams send one, maybe two, then quit. The deals you're losing aren't saying no — they just haven't seen the right message at the right moment yet.",
-    fix: 'Sendrit — automated, multi-step sequences that keep following up on the right cadence until you get a reply.',
+    long: "Most replies land after the first email, but most teams send one, maybe two, then quit. The deals you're losing aren't saying no, they just haven't seen the right message at the right moment yet.",
+    fix: 'Sendrit: automated, multi-step sequences that keep following up on the right cadence until you get a reply.',
   },
 ];
 
@@ -107,7 +107,7 @@ export default function LowReplyRatesCauses() {
           <p data-reveal>
             Most teams rewrite their subject lines when reply rates drop. That addresses one
             variable while three others stay broken. Here&rsquo;s what&rsquo;s actually stopping
-            replies &mdash; and which part of NeoLeads fixes each one.
+            replies, and which part of NeoLeads fixes each one.
           </p>
         </div>
 
@@ -286,7 +286,7 @@ function PanelPersonalize() {
       <div className="lrr-msg is-good">
         <div className="lrr-msg-label purple">Written by NeoBrain AI</div>
         <p className="lrr-msg-body bright">
-          Hi Marcus — congrats on the <span className="lrr-hl">$18M raise</span>. Noticed Acme just
+          Hi Marcus, congrats on the <span className="lrr-hl">$18M raise</span>. Noticed Acme just
           opened <span className="lrr-hl">8 SDR roles</span>; scaling the team usually means new
           pipeline targets. Worth a look at how others hit them faster?
         </p>
@@ -322,7 +322,7 @@ function PanelSequence() {
               </div>
               <span className={`lrr-seq-status ${s.tone}`}>{s.status}</span>
               {s.tone === 'replied' && (
-                <p className="lrr-seq-quote">“Good timing — let’s set up a call this week.”</p>
+                <p className="lrr-seq-quote">“Good timing, let’s set up a call this week.”</p>
               )}
             </div>
           </div>

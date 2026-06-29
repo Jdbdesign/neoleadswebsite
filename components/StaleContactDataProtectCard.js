@@ -344,7 +344,7 @@ export default function StaleContactDataProtectCard() {
       <h3 className="scd-fix-title" style={o(250, 350, 8)}>Protect the domain</h3>
       <p className="scd-fix-desc" style={o(380, 350, 8)}>
         Warmrit keeps every sending domain at campaign-ready reputation, so cleaned lists
-        send from a position of strength &mdash; able to absorb the occasional bounce
+        send from a position of strength, able to absorb the occasional bounce
         without lasting damage.
       </p>
 
