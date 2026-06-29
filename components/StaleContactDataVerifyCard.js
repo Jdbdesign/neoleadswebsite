@@ -511,7 +511,7 @@ export default function StaleContactDataVerifyCard() {
       <div className="scd-deep-card" ref={p1Ref} style={{ opacity: 0, transform: 'translateY(16px)' }}>
         <div className="scd-deep-card-head" ref={p1HeadRef} style={{ opacity: 0 }}>
           <span className="scd-deep-card-label scd-vf-title">
-            Verifyrit <span>&mdash; Pre-Campaign Check</span>
+            Verifyrit <span>: Pre-Campaign Check</span>
           </span>
           <span className="scd-vf-meta">Q3 OUTREACH &middot; <span ref={metaNumRef}>0</span></span>
         </div>
@@ -582,7 +582,7 @@ export default function StaleContactDataVerifyCard() {
       <div className="scd-deep-card scd-sm-card" ref={p2Ref} style={{ opacity: 0, transform: 'translateY(16px)', borderColor: 'rgba(255,255,255,0.05)' }}>
         <div className="scd-deep-card-head" ref={p2HeadRef} style={{ visibility: 'hidden', opacity: 0, transform: 'translateY(6px)' }}>
           <span className="scd-deep-card-label scd-vf-title">
-            Snaarpmail <span>&mdash; Domain Health</span>
+            Snaarpmail <span>: Domain Health</span>
           </span>
           <span className="scd-sm-tag" ref={tagRef} style={{ visibility: 'hidden', opacity: 0, transform: 'scale(0.7)' }}>post-campaign</span>
         </div>

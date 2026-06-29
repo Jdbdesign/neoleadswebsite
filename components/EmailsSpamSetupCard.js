@@ -26,7 +26,7 @@ import Icon from '@/components/Icon';
 const PURPLE = '#7C3AED';
 const GREEN = '#22C55E';
 const BADGE_GRAD = 'linear-gradient(135deg, var(--brand) 0%, var(--brand-light) 100%)';
-const FOOT_TEXT = 'Sendrit: Cleared — campaign authorised to launch';
+const FOOT_TEXT = 'Sendrit: Cleared, campaign authorised to launch';
 
 // cycle timeline (ms)
 const LOOP = 10000;
@@ -494,7 +494,7 @@ export default function EmailsSpamSetupCard() {
           <div className="els-setup-rec">
             <div className="els-setup-name">SPF</div>
             <div className="els-setup-detail" ref={spfDetailRef} style={{ opacity: 0.62 }}>
-              v=spf1 include:_spf &middot; ~all &mdash; Auto-configured
+              v=spf1 include:_spf &middot; ~all, Auto-configured
             </div>
           </div>
         </div>
@@ -505,7 +505,7 @@ export default function EmailsSpamSetupCard() {
           <div className="els-setup-rec">
             <div className="els-setup-name">DKIM</div>
             <div className="els-setup-detail" ref={dkimDetailRef} style={{ opacity: 0.62 }}>
-              2048-bit key &mdash; Active
+              2048-bit key: Active
             </div>
           </div>
         </div>
@@ -516,7 +516,7 @@ export default function EmailsSpamSetupCard() {
           <div className="els-setup-rec">
             <div className="els-setup-name">DMARC</div>
             <div className="els-setup-detail" ref={dmarcDetailRef} style={{ opacity: 0.62 }}>
-              p=quarantine &mdash; Enforced
+              p=quarantine: Enforced
             </div>
           </div>
         </div>
@@ -536,7 +536,7 @@ export default function EmailsSpamSetupCard() {
       <div className="els-setup-divider" aria-hidden="true" />
 
       <div className="els-setup-warmhead">
-        <span className="els-setup-warmlabel">Warmup Progress &mdash; Warmrit</span>
+        <span className="els-setup-warmlabel">Warmup Progress: Warmrit</span>
         <span className="els-setup-warmbadge" ref={badgeRef}>
           <span ref={badgeTextRef} style={{ display: 'inline-block', transition: 'opacity 150ms ease' }}>
             96 &middot; Inbox-Ready

@@ -18,28 +18,28 @@ const CAUSES = [
     icon: 'key-round',
     title: 'Missing Authentication',
     short: 'SPF, DKIM, and DMARC prove your domain is who it claims to be.',
-    long: 'SPF, DKIM, and DMARC are the three DNS records that prove your domain is who it claims to be. Since Google and Yahoo (Feb 2024) and Microsoft (May 2025), sending without them means outright rejection at the server level — not “possibly spam,” rejection. Only 7.6% of domains currently enforce DMARC.',
+    long: 'SPF, DKIM, and DMARC are the three DNS records that prove your domain is who it claims to be. Since Google and Yahoo (Feb 2024) and Microsoft (May 2025), sending without them means outright rejection at the server level, not “possibly spam,” rejection. Only 7.6% of domains currently enforce DMARC.',
     fix: 'Snaarpmail auto-configures SPF, DKIM and DMARC for every connected sending domain on setup.',
   },
   {
     icon: 'mail',
     title: 'Cold, Unwarmed Inboxes',
-    short: 'New domains land at 55% inbox vs. 85% — a 30-point cold-start penalty.',
-    long: 'New domains and mailboxes have no sending history, so providers treat every message as suspicious. New domains land at 55% inbox vs. 85% for warmed ones — a 30-point cold-start penalty that no subject line can overcome.',
+    short: 'New domains land at 55% inbox vs. 85%, a 30-point cold-start penalty.',
+    long: 'New domains and mailboxes have no sending history, so providers treat every message as suspicious. New domains land at 55% inbox vs. 85% for warmed ones, a 30-point cold-start penalty that no subject line can overcome.',
     fix: 'Warmrit ramps every new domain with natural, human-like activity until it earns full inbox trust before your campaign sends.',
   },
   {
     icon: 'copy',
     title: 'Content That Reads Like a Template',
     short: "Gmail's AI now detects the same patterns AI outreach tools write.",
-    long: "Gmail's AI now detects the same patterns AI outreach tools write — identical structures, spammy phrases, link-heavy bodies, and mail-merge tokens. Content that looks mass-produced gets filtered no matter how clean your domain is.",
-    fix: "NeoBrain AI writes each message from the prospect's real signals, so every email reads uniquely human — not mass-produced.",
+    long: "Gmail's AI now detects the same patterns AI outreach tools write: identical structures, spammy phrases, link-heavy bodies, and mail-merge tokens. Content that looks mass-produced gets filtered no matter how clean your domain is.",
+    fix: "NeoBrain AI writes each message from the prospect's real signals, so every email reads uniquely human, not mass-produced.",
   },
   {
     icon: 'list-x',
     title: 'List Hygiene Failures',
-    short: 'Purchased lists average 18.5% bounce — enough to burn a domain in one send.',
-    long: 'Sending to invalid, stale, or purchased addresses spikes your bounce rate, and providers read high bounces as spammer behaviour. Purchased lists average 18.5% bounce — enough to burn a domain in a single send.',
+    short: 'Purchased lists average 18.5% bounce, enough to burn a domain in one send.',
+    long: 'Sending to invalid, stale, or purchased addresses spikes your bounce rate, and providers read high bounces as spammer behaviour. Purchased lists average 18.5% bounce, enough to burn a domain in a single send.',
     fix: 'Verifyrit validates every address through 7-layer checks before send, keeping bounce rates under 1% and your reputation intact.',
   },
 ];
@@ -106,7 +106,7 @@ export default function EmailsSpamCauses() {
           </h2>
           <p data-reveal>
             Most teams facing spam issues change their copy, remove links, or switch to a new
-            domain and start over &mdash; leaving the actual causes intact. Here&rsquo;s what&rsquo;s
+            domain and start over, leaving the actual causes intact. Here&rsquo;s what&rsquo;s
             really happening, and which part of NeoLeads addresses each one.
           </p>
         </div>
@@ -284,7 +284,7 @@ function PanelContent() {
       <div className="els-msg is-good">
         <div className="els-msg-label purple">Written by NeoBrain AI</div>
         <p className="els-msg-body bright">
-          Hi Marcus — saw Acme just opened <span className="els-hl">9 SDR roles</span> after the new
+          Hi Marcus, saw Acme just opened <span className="els-hl">9 SDR roles</span> after the new
           CRO landed. Teams scaling outbound that fast usually hit{' '}
           <span className="els-hl">deliverability walls</span> first. Worth comparing notes?
         </p>

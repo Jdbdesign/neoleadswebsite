@@ -383,7 +383,7 @@ export default function StaleContactDataValidateCard() {
       <h3 className="scd-fix-title" style={o(250, 350, 8)}>Validate before it sends</h3>
       <p className="scd-fix-desc" style={o(380, 350, 8)}>
         Every contact entering a Sendrit campaign passes through Verifyrit&rsquo;s 7-layer
-        check first &mdash; on every launch, not just the first import. Invalid addresses,
+        check first, on every launch, not just the first import. Invalid addresses,
         catch-alls, and spam traps are removed before a sequence fires.
       </p>
 

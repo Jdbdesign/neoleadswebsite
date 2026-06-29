@@ -270,7 +270,7 @@ export default function LowReplyRatesCompare() {
                 </div>
                 <div className="lrr-reply" style={move(1320, 300, 'translateY(8px)')}>
                   <span className="lrr-reply-dot amber" aria-hidden="true"></span>
-                  <span style={fade(1400, 250)}>&ldquo;Not now &mdash; follow up in Q2&rdquo;</span>
+                  <span style={fade(1400, 250)}>&ldquo;Not now, follow up in Q2&rdquo;</span>
                 </div>
               </div>
             </article>

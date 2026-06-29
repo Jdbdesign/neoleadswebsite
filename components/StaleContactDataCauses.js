@@ -18,29 +18,29 @@ const CAUSES = [
     icon: 'database',
     title: 'Static Databases',
     short: 'A list bought or exported once starts rotting the moment you save it.',
-    long: 'Most teams run a verification pass before a big campaign and call it done. But data decays at 2.1% per month — by the time the next campaign launches, the list is already stale again.',
-    fix: 'Zeus — continuously refreshed, buying-signal-backed contacts, not a snapshot that rots.',
+    long: 'Most teams run a verification pass before a big campaign and call it done. But data decays at 2.1% per month, by the time the next campaign launches, the list is already stale again.',
+    fix: 'Zeus: continuously refreshed, buying-signal-backed contacts, not a snapshot that rots.',
   },
   {
     icon: 'mail',
     title: 'No Pre-Campaign Validation',
     short: 'Stale contacts enter sequences unchecked and bounce your domain.',
-    long: 'Most sequences launch against whatever is in the CRM. Invalid addresses, dead domains, and spam traps go out with everything else — and every hard bounce chips away at the sender reputation you spent months building.',
-    fix: 'Verifyrit — every address re-validated at send time, so bad data never leaves your domain.',
+    long: 'Most sequences launch against whatever is in the CRM. Invalid addresses, dead domains, and spam traps go out with everything else, and every hard bounce chips away at the sender reputation you spent months building.',
+    fix: 'Verifyrit: every address re-validated at send time, so bad data never leaves your domain.',
   },
   {
     icon: 'layers',
     title: 'Invisible CRM Rot',
     short: 'No alert fires when a contact changes jobs or a domain goes dark.',
-    long: 'A CRM only knows what was true the day a record was created. When someone changes roles, a company rebrands, or a domain lapses, nothing flags it — the rot stays invisible until a campaign bounces or a reply never comes.',
-    fix: 'NeoBrain AI — live change-detection that flags and updates records the moment a signal moves.',
+    long: 'A CRM only knows what was true the day a record was created. When someone changes roles, a company rebrands, or a domain lapses, nothing flags it, the rot stays invisible until a campaign bounces or a reply never comes.',
+    fix: 'NeoBrain AI: live change-detection that flags and updates records the moment a signal moves.',
   },
   {
     icon: 'replace',
     title: 'Role-Change Blindness',
-    short: 'The email delivers — but the person left their role months ago.',
+    short: 'The email delivers, but the person left their role months ago.',
     long: 'Deliverability looks perfect: the email lands, maybe even gets opened. But the contact moved on two quarters ago, so your perfectly personalized message reaches someone who can no longer say yes.',
-    fix: 'Zeus + NeoBrain AI — re-verify the person behind the address and re-score them on every change.',
+    fix: 'Zeus + NeoBrain AI: re-verify the person behind the address and re-score them on every change.',
   },
 ];
 
@@ -107,7 +107,7 @@ export default function StaleContactDataCauses() {
           <p data-reveal>
             Most teams run a quarterly scrub and assume the problem is solved. That fixes one
             moment in time while the data keeps decaying underneath them. Here&rsquo;s what&rsquo;s
-            actually letting your list go stale &mdash; and which part of NeoLeads fixes each one.
+            actually letting your list go stale, and which part of NeoLeads fixes each one.
           </p>
         </div>
 
@@ -207,7 +207,7 @@ function PanelDecay() {
       </div>
       <div className="scd-zeus-pill">
         <span className="scd-zeus-badge">Zeus</span>
-        Refreshed against live signals &mdash; always current, never a snapshot
+        Refreshed against live signals: always current, never a snapshot
       </div>
     </>
   );
@@ -278,7 +278,7 @@ function PanelRot() {
         ))}
       </div>
       <p className="scd-causes-foot-note">
-        Every change fires a signal &mdash; your CRM stays current without a single manual edit.
+        Every change fires a signal, your CRM stays current without a single manual edit.
       </p>
     </>
   );
@@ -288,7 +288,7 @@ function PanelRot() {
 function PanelRole() {
   return (
     <>
-      <span className="scd-panel-eyebrow">Delivered &mdash; but to whom?</span>
+      <span className="scd-panel-eyebrow">Delivered, but to whom?</span>
       <div className="scd-prow is-bad">
         <div className="scd-prow-head">
           <span className="scd-prow-av gray">DO</span>

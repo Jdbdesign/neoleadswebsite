@@ -32,7 +32,7 @@ export default function LowReplyRatesPage() {
           </h1>
           <p className="lrr-sub" data-reveal>
             The average cold email reply rate has dropped to 3.43% in 2026. Teams hitting
-            15%+ aren&rsquo;t writing better subject lines &mdash; they&rsquo;re fixing the four root
+            15%+ aren&rsquo;t writing better subject lines, they&rsquo;re fixing the four root
             causes most teams never touch: wrong targets, emails that never arrive,
             outreach that reads like a template, and follow-up that gives up too soon.
           </p>
@@ -106,7 +106,7 @@ export default function LowReplyRatesPage() {
               </h2>
               <p className="lrr-pp-lead" data-reveal>
                 The teams hitting 15%+ reply rates aren&rsquo;t better copywriters. They reach
-                contacts who have a real reason to reply &mdash; identified by buying signals &mdash;
+                contacts who have a real reason to reply, identified by buying signals,
                 with a message that proves someone did their homework. That&rsquo;s what Zeus and
                 NeoBrain AI do together, automatically.
               </p>
@@ -118,7 +118,7 @@ export default function LowReplyRatesPage() {
                     <h4>Signal-First Targeting</h4>
                     <p>
                       Zeus surfaces contacts who just raised a round, posted a surge of hiring
-                      roles, or appointed a new VP &mdash; the moments that create genuine openness
+                      roles, or appointed a new VP, the moments that create genuine openness
                       to a new conversation.
                     </p>
                   </div>
@@ -130,7 +130,7 @@ export default function LowReplyRatesPage() {
                     <h4>Research-Backed First Lines</h4>
                     <p>
                       NeoBrain AI reads the specific signal that surfaced each contact and writes an
-                      opening line that references it directly &mdash; so the prospect opens an email
+                      opening line that references it directly, so the prospect opens an email
                       that already knows their situation.
                     </p>
                   </div>
@@ -154,13 +154,13 @@ export default function LowReplyRatesPage() {
             {/* ---- right: copy + features ---- */}
             <div className="lrr-pp-text" data-reveal-stagger="100">
               <span className="lrr-pp-label neutral" data-reveal>
-                Root Cause 2 + 4 &mdash; Deliverability &amp; Follow-Up
+                Root Cause 2 + 4: Deliverability &amp; Follow-Up
               </span>
               <h2 data-reveal>
                 Fix the Infrastructure. Then Fix the Sequence. Replies Follow Both.
               </h2>
               <p className="lrr-pp-lead" data-reveal>
-                Improving reply rate means solving two fronts at once &mdash; making sure emails
+                Improving reply rate means solving two fronts at once, making sure emails
                 actually arrive, and making sure follow-up doesn&rsquo;t give up after two touches.
                 NeoLeads handles both inside the same pipeline.
               </p>
@@ -172,7 +172,7 @@ export default function LowReplyRatesPage() {
                     <h4>Inbox Before Outreach</h4>
                     <p>
                       Verifyrit removes every invalid address before launch. Warmrit ensures every
-                      sending domain has the reputation to land in primary &mdash; so a campaign
+                      sending domain has the reputation to land in primary, so a campaign
                       starts deliverability-safe instead of sabotaging itself.
                     </p>
                   </div>
@@ -208,7 +208,7 @@ export default function LowReplyRatesPage() {
               End to End
             </h2>
             <p data-reveal>
-              Every product plays a specific role in fixing one of the four root causes &mdash; and
+              Every product plays a specific role in fixing one of the four root causes, and
               because they&rsquo;re connected, the fix happens automatically rather than requiring
               five separate tools to be manually coordinated.
             </p>
@@ -260,7 +260,7 @@ export default function LowReplyRatesPage() {
                 <span className="lrr-sum-chip">NeoBrain AI</span>
               </div>
               <p className="lrr-sum-desc">
-                Find the right people at the right moment &mdash; verified decision-makers flagged
+                Find the right people at the right moment, verified decision-makers flagged
                 with the buying signal that makes them worth contacting today. NeoBrain AI ranks
                 them by fit and intent so your team works the most reply-ready contacts first.
               </p>
@@ -305,7 +305,7 @@ export default function LowReplyRatesPage() {
               <p className="lrr-sum-desc">
                 AI-researched, signal-backed first lines that don&rsquo;t read like templates.
                 Multichannel sequences that respond to how each prospect actually behaves. Follow-up
-                triggered by signals &mdash; not a fixed calendar that ignores whether anyone opened.
+                triggered by signals, not a fixed calendar that ignores whether anyone opened.
               </p>
               <p className="lrr-sum-shift">
                 <Icon name="arrow-right" aria-hidden="true" />

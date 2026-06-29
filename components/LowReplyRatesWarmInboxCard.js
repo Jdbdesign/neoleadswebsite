@@ -342,7 +342,7 @@ export default function LowReplyRatesWarmInboxCard() {
       </div>
       <h3 className="lrr-fix-title" style={o(250, 350, 8)}>Prepare the inbox</h3>
       <p className="lrr-fix-desc" style={o(380, 350, 8)}>
-        Every sending domain is warmed to campaign-ready &mdash; building the
+        Every sending domain is warmed to campaign-ready, building the
         reputation that lands in primary, not spam.
       </p>
 

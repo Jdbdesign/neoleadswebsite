@@ -20,7 +20,7 @@ import Icon from './Icon';
 const SUB_PREFIX = 'Subject: ';
 const SUB_TEXT = 'Quick thought on scaling Acme’s SDR team';
 const BODY =
-  '“Hi Marcus — saw Acme just brought on a new CRO and opened 9 SDR roles in the same week. ' +
+  '“Hi Marcus, saw Acme just brought on a new CRO and opened 9 SDR roles in the same week. ' +
   'Most teams hiring that fast hit outbound pipeline walls before the new reps are ramped…”';
 const SIGNALS = ['Raised $22M Series B · 9d ago', '9 SDR roles posted · 5d', 'New CRO hired · 12d'];
 
@@ -294,7 +294,7 @@ export default function LowReplyRatesTargetingCard() {
         <span className={sparkPulse ? 'pp-spark' : undefined} style={{ display: 'inline-flex' }}>
           <Icon name="sparkles" aria-hidden="true" />
         </span>
-        {' '}NeoBrain AI — researched from 3 signals
+        {' '}NeoBrain AI: researched from 3 signals
       </span>
 
       <style jsx>{`

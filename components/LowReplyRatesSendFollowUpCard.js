@@ -580,7 +580,7 @@ export default function LowReplyRatesSendFollowUpCard() {
       </div>
       <h3 className="lrr-fix-title" style={o(250, 350, 8)}>Send &amp; follow up</h3>
       <p className="lrr-fix-desc" style={o(380, 350, 8)}>
-        AI-researched, signal-backed sequences across email, LinkedIn, and calling &mdash;
+        AI-researched, signal-backed sequences across email, LinkedIn, and calling,
         follow-up responds to behaviour.
       </p>
 

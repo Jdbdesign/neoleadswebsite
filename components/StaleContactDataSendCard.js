@@ -580,8 +580,8 @@ export default function StaleContactDataSendCard() {
       </div>
       <h3 className="scd-fix-title" style={o(250, 350, 8)}>Only clean contacts send</h3>
       <p className="scd-fix-desc" style={o(380, 350, 8)}>
-        Sendrit launches AI-personalized sequences to the right person, in the right role
-        &mdash; verified, signal-backed contacts, not whoever sat in the CRM eight months
+        Sendrit launches AI-personalized sequences to the right person, in the right role,
+        verified, signal-backed contacts, not whoever sat in the CRM eight months
         ago.
       </p>
 

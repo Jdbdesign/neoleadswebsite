@@ -532,11 +532,8 @@ export default function ZeusProspectingPage() {
               </g>
             </svg>
 
-            {/* 8 avatar pins, spread around the map. Center pin is the hub. */}
-            <div className="map-node hero" style={{ left: '50%', top: '48%', animationDelay: '.8s' }}>
-              <img src="/avatars/Container-3.png" alt="Jeremiah G" />
-              <span className="nlabel"><b>Jeremiah G</b><span>Founder</span></span>
-            </div>
+            {/* avatar pins, spread around the map. The hub at center is the
+                convergence point for the connector lines (no avatar rendered). */}
             <div className="map-node glow" style={{ left: '50%', top: '16%', animationDelay: '0s' }}>
               <img src="/avatars/Container-2.png" alt="Balia Daniela" />
               <span className="nlabel"><b>Balia Daniela</b><span>VP Sales</span></span>

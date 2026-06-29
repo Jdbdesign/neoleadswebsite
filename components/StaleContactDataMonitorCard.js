@@ -584,8 +584,8 @@ export default function StaleContactDataMonitorCard() {
       </div>
       <h3 className="scd-fix-title" style={o(250, 350, 8)}>Monitor &amp; protect post-send</h3>
       <p className="scd-fix-desc" style={o(380, 350, 8)}>
-        Snaarpmail auto-quarantines hard bounces and tracks domain health in real time
-        &mdash; so the team knows the moment something shifts, not four campaigns later.
+        Snaarpmail auto-quarantines hard bounces and tracks domain health in real time,
+        so the team knows the moment something shifts, not four campaigns later.
       </p>
 
       {/* ----- live loop zone ----- */}

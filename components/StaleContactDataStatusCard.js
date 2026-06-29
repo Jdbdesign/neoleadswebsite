@@ -17,7 +17,7 @@
 import { useEffect, useRef } from 'react';
 import Icon from './Icon';
 
-const ALERT_TEXT = 'Job change detected — record updated';
+const ALERT_TEXT = 'Job change detected: record updated';
 
 export default function StaleContactDataStatusCard() {
   // --- element refs ---
