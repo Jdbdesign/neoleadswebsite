@@ -15,7 +15,7 @@ const PRODUCTS = [
 
 const SOLUTIONS = [
   { href: '/low-reply-rates', icon: 'message-circle-off', title: 'Low Reply Rates', desc: 'Turn cold outreach into conversations that actually start' },
-  { href: '#', icon: 'table-2', title: 'Manual Prospecting', desc: 'Find verified buyers in seconds, not spreadsheet hours' },
+  { href: '/manual-prospecting', icon: 'table-2', title: 'Manual Prospecting', desc: 'Find verified buyers in seconds, not spreadsheet hours' },
   { href: '#', icon: 'bell-off', title: 'Missed Hot Replies', desc: 'Never lose a warm reply in a flood of unread inboxes' },
   { href: '/stale-contact-data', icon: 'database', title: 'Stale Contact Data', desc: 'Stop wasting time on leads who left six months ago' },
   { href: '#', icon: 'copy-x', title: 'Generic Outreach', desc: 'Replace copy-paste templates with AI-researched messages' },
