@@ -18,10 +18,10 @@ const SOLUTIONS = [
   { href: '/manual-prospecting', icon: 'table-2', title: 'Manual Prospecting', desc: 'Find verified buyers in seconds, not spreadsheet hours' },
   { href: '#', icon: 'bell-off', title: 'Missed Hot Replies', desc: 'Never lose a warm reply in a flood of unread inboxes' },
   { href: '/stale-contact-data', icon: 'database', title: 'Stale Contact Data', desc: 'Stop wasting time on leads who left six months ago' },
-  { href: '#', icon: 'copy-x', title: 'Generic Outreach', desc: 'Replace copy-paste templates with AI-researched messages' },
+  { href: '/generic-outreach', icon: 'copy-x', title: 'Generic Outreach', desc: 'Replace copy-paste templates with AI-researched messages' },
   { href: '#', icon: 'bar-chart-3', title: 'No Pipeline Visibility', desc: 'See every deal, signal, and conversation in one place' },
   { href: '/emails-landing-in-spam', icon: 'shield-x', title: 'Emails Landing in Spam', desc: 'Fix deliverability before it kills your sender reputation' },
-  { href: '#', icon: 'mail-x', title: 'High Bounce Rates', desc: 'Clean every list before a single email leaves your domain' },
+  { href: '/high-bounce-rates', icon: 'mail-x', title: 'High Bounce Rates', desc: 'Clean every list before a single email leaves your domain' },
   { href: '#', icon: 'list-x', title: 'Unqualified Lead Lists', desc: "Score and rank leads by who's actually ready to buy" },
 ];
 
