@@ -5,7 +5,7 @@
 // scroll-into-view (IntersectionObserver, threshold 0.15, unobserve after firing).
 //
 // All animation is isolated to this component:
-//   - entrance states are inline styles (opacity / transform only — zero layout shift)
+//   - entrance states are inline styles (opacity / transform only, zero layout shift)
 //   - the "47 verified" tally + the three ICP scores are rAF + easeOutCubic counters
 //   - the left card's "working…" shimmer and the right card's idle pulses are
 //     component-scoped styled-jsx keyframes
@@ -21,7 +21,7 @@ function easeOutCubic(t) {
   return 1 - Math.pow(1 - t, 3);
 }
 
-// Left card — the manual stack, in the order a rep actually grinds through it.
+// Left card: the manual stack, in the order a rep actually grinds through it.
 const TOOLS = [
   { name: 'LinkedIn', status: 'Filtering by title…' },
   { name: 'Apollo', status: 'Cross-referencing…' },
@@ -30,7 +30,7 @@ const TOOLS = [
   { name: 'CRM', status: 'Checking existing contacts…' },
 ];
 
-// Right card — what Zeus returns instead.
+// Right card: what Zeus returns instead.
 const LEADS = [
   { initials: 'MT', name: 'Marcus T.', role: 'VP Sales', signal: 'Raised $18M · 9 SDR roles open', score: 94 },
   { initials: 'PN', name: 'Priya N.', role: 'VP Sales', signal: 'New CRO hired · Scaling team', score: 88 },
@@ -181,7 +181,7 @@ export default function ManualProspectingCompare() {
 
               <div className="mp-later" style={move(900, 360, 'translateY(8px)')}>
                 <Icon name="clock" aria-hidden="true" />
-                9:14 AM — 47 minutes later
+                9:14 AM, 47 minutes later
               </div>
 
               <div className="mp-found" style={move(1020, 360, 'translateY(8px)')}>
@@ -213,7 +213,7 @@ export default function ManualProspectingCompare() {
               <div className="mp-zeus-meta" style={fade(820, 320)}>
                 <span className={`mp-zpill green${idle && !reduced ? ' mp-pulse-pill' : ''}`}>
                   <Icon name="clock" aria-hidden="true" />
-                  8:27 AM — 10 seconds later
+                  8:27 AM, 10 seconds later
                 </span>
                 <span className="mp-verified">{verified} verified</span>
               </div>
@@ -243,7 +243,7 @@ export default function ManualProspectingCompare() {
         </div>
       </div>
 
-      {/* component-scoped keyframes — left "working" shimmer + right idle pulses */}
+      {/* component-scoped keyframes: left "working" shimmer + right idle pulses */}
       <style jsx>{`
         .mp-working {
           animation: mpWorking 1.8s ease-in-out infinite;

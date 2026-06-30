@@ -9,7 +9,7 @@
 // threshold 0.15); the prominent numbers (ICP scores, validated tally, domain
 // reputation) are rAF + easeOutCubic counters; the validation/segment bars fill
 // via inline width transitions; live dots + tags keep a component-scoped idle
-// pulse. No global CSS is touched — every .mp-fx* class is styled in globals.css.
+// pulse. No global CSS is touched; every .mp-fx* class is styled in globals.css.
 // Reduced motion renders the final resting state.
 
 import { useEffect, useRef, useState } from 'react';
@@ -124,7 +124,7 @@ export default function ManualProspectingFix() {
             Prospecting End to End
           </h2>
           <p data-reveal>
-            Five steps that used to span five tools and most of a morning &mdash; collapsed into a
+            Five steps that used to span five tools and most of a morning, collapsed into a
             single pipeline that runs in minutes, automatically, without a tab opened outside
             NeoLeads.
           </p>
@@ -141,11 +141,11 @@ export default function ManualProspectingFix() {
               </span>
               <span className="mp-fix-cut">cuts · 3.5 hrs research</span>
             </div>
-            <h3 className="mp-fix-title">Find the right people &mdash; in seconds</h3>
+            <h3 className="mp-fix-title">Find the right people, in seconds</h3>
             <p className="mp-fix-desc">
               Type a plain-English description of your ideal buyer. Zeus searches continuously
               refreshed, verified records and ranks results by ICP fit and live buying signals.
-              Every result arrives with a score and a &ldquo;why now&rdquo; &mdash; not just a name
+              Every result arrives with a score and a &ldquo;why now,&rdquo; not just a name
               and an email.
             </p>
             <div className="mp-fix-mock">
@@ -180,7 +180,7 @@ export default function ManualProspectingFix() {
             <p className="mp-fix-desc">
               Every contact from a Zeus search passes through Verifyrit&rsquo;s 7-layer check before
               entering a campaign. Invalid addresses, catch-all domains, and risky contacts are
-              flagged automatically &mdash; no manual verification step required.
+              flagged automatically, no manual verification step required.
             </p>
             <div className="mp-fix-mock">
               <div className="mp-fxm-top">
@@ -240,7 +240,7 @@ export default function ManualProspectingFix() {
             <h3 className="mp-fix-title">Protect the infrastructure</h3>
             <p className="mp-fix-desc">
               Warmrit keeps the sending domain campaign-ready before a sequence fires. Snaarpmail
-              manages inbox placement and replies across every active campaign &mdash; from one
+              manages inbox placement and replies across every active campaign, from one
               screen, without inbox-hopping.
             </p>
             <div className="mp-fix-mock">
@@ -278,7 +278,7 @@ export default function ManualProspectingFix() {
             <h3 className="mp-fix-title">Triage replies automatically</h3>
             <p className="mp-fix-desc">
               NeoBrain AI classifies every reply by intent before a human opens it. Interested
-              replies surface first, sequences auto-pause on response &mdash; the rep&rsquo;s inbox
+              replies surface first, sequences auto-pause on response, the rep&rsquo;s inbox
               is pre-sorted before they sit down.
             </p>
             <div className="mp-fix-mock">

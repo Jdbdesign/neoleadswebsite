@@ -1,6 +1,6 @@
 'use client';
 
-// "Root Cause 2 + 4 — Tool Sprawl & Stale Lists" demo card for
+// "Root Cause 2 + 4: Tool Sprawl & Stale Lists" demo card for
 // /manual-prospecting. A scroll-triggered, once-only sequence that shows the
 // search → verify → launch handoff happening inside one platform: Zeus hands 47
 // contacts to Verifyrit (deliverability chips pop in), a live Sendrit campaign
@@ -10,7 +10,7 @@
 // Self-contained: entrance states are inline opacity/transform; the contact
 // tally is a rAF + easeOutCubic counter; the race bars fill via inline width
 // transitions; idle pulses live in component-scoped styled-jsx. No global CSS is
-// touched — every .mp-pl-* class is styled in globals.css. Reduced motion renders
+// touched; every .mp-pl-* class is styled in globals.css. Reduced motion renders
 // the final resting state.
 
 import { useEffect, useRef, useState } from 'react';
@@ -135,7 +135,7 @@ export default function ManualProspectingPipelineCard() {
           <span className="mp-pl-muted">47 contacts found</span>
         </div>
         <div className="mp-pl-query">
-          <span className="mp-pl-query-text">Series B SaaS &mdash; VP Sales</span>
+          <span className="mp-pl-query-text">Series B SaaS, VP Sales</span>
           <span className="mp-pl-send">Send to Verifyrit <Icon name="arrow-right" aria-hidden="true" /></span>
         </div>
         <div className="mp-pl-chips">
@@ -149,7 +149,7 @@ export default function ManualProspectingPipelineCard() {
       {/* ---- Block 2: live campaign ---- */}
       <div className="mp-pl-block" style={move(420, 460, 'translateY(10px)')}>
         <div className="mp-pl-block-head">
-          <span className="mp-pl-title sm">Series B SDR Expansion &mdash; October</span>
+          <span className="mp-pl-title sm">Series B SDR Expansion, October</span>
           <span className={`mp-pl-live${idle && !reduced ? ' mp-pl-live-on' : ''}`}>
             <span className="mp-pl-live-dot" aria-hidden="true" />
             Live · launched 4 min after search
@@ -170,7 +170,7 @@ export default function ManualProspectingPipelineCard() {
           </div>
         </div>
         <span className="mp-pl-neobrain" style={fade(900, 320)}>
-          <Icon name="sparkles" aria-hidden="true" /> NeoBrain &mdash; first lines generated per contact
+          <Icon name="sparkles" aria-hidden="true" /> NeoBrain: first lines generated per contact
         </span>
       </div>
 
