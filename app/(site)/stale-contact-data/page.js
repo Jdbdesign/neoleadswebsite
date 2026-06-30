@@ -21,10 +21,6 @@ export default function StaleContactDataPage() {
       {/* ===================== HERO ===================== */}
       <section className="scd-hero">
         <div className="container" data-reveal-stagger="100" data-reveal-onload>
-          <span className="scd-badge" data-reveal>
-            <Icon name="database" aria-hidden="true" />
-            Stale Contact Data
-          </span>
           <h1 data-reveal>
             <span className="scd-h1-line">Your List Loses <span className="scd-decay">22% of Its Value</span></span><br />
             Every Year. While You Sleep.
