@@ -1,6 +1,6 @@
 'use client';
 
-// "Root Cause 1 + 3 — Research Time & Missing Signals" demo card for
+// "Root Cause 1 + 3: Research Time & Missing Signals" demo card for
 // /manual-prospecting. A scroll-triggered, once-only sequence that plays like a
 // live Zeus search: the query settles in, NeoBrain AI "searches live signals",
 // three verified, signal-ranked contacts populate (each ICP score counting up),
@@ -9,7 +9,7 @@
 //
 // Self-contained: entrance states are inline opacity/transform; the three ICP
 // scores are rAF + easeOutCubic counters; the searching-dot and idle pulses are
-// component-scoped styled-jsx. No global CSS is touched — every .mp-sr-* class is
+// component-scoped styled-jsx. No global CSS is touched; every .mp-sr-* class is
 // styled in globals.css. Reduced motion renders the final resting state.
 
 import { useEffect, useRef, useState } from 'react';
@@ -142,7 +142,7 @@ export default function ManualProspectingSearchCard() {
       <span className="mp-sr-pill" style={fade(440, 320)}>
         <span className={`mp-sr-pill-dot${searching || (idle && !reduced) ? ' mp-sr-searching' : ''}`} aria-hidden="true" />
         <Icon name="sparkles" aria-hidden="true" />
-        NeoBrain AI &mdash; searching live signals
+        NeoBrain AI: searching live signals
       </span>
 
       <div className="mp-sr-panel" style={fade(620, 360)}>

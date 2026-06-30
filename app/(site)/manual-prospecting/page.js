@@ -17,10 +17,6 @@ export default function ManualProspectingPage() {
       {/* ===================== HERO ===================== */}
       <section className="mp-hero">
         <div className="container" data-reveal-stagger="100" data-reveal-onload>
-          <span className="mp-badge" data-reveal>
-            <Icon name="table-2" aria-hidden="true" />
-            Manual Prospecting
-          </span>
           <h1 data-reveal>
             Your Reps Spend <span className="mp-hl">70% of Their Week</span> Not
             Selling. That&rsquo;s the Problem.
@@ -29,11 +25,11 @@ export default function ManualProspectingPage() {
             The average B2B sales rep spends just <strong>28&ndash;30%</strong> of their week
             actually selling. The rest disappears into manual research, tab-switching,
             list-building, and CRM updates that don&rsquo;t move a single deal forward. Zeus
-            replaces that entire process with a 10-second search &mdash; verified contacts,
+            replaces that entire process with a 10-second search: verified contacts,
             buying signals, and ICP scores, ready to launch without leaving NeoLeads.
           </p>
           <div className="mp-ctas" data-reveal>
-            <button className="btn-primary">Find Leads in Seconds &mdash; Free <Icon name="arrow-right" /></button>
+            <button className="btn-primary">Find Leads in Seconds, Free <Icon name="arrow-right" /></button>
             <button className="btn-light">See Zeus Find Leads Live</button>
           </div>
           <p className="mp-microcopy" data-reveal>
@@ -49,7 +45,7 @@ export default function ManualProspectingPage() {
       <section className="mp-metrics">
         <div className="container">
           <p className="mp-metrics-label" data-reveal>
-            The true cost of manual prospecting &mdash; measured in time your reps aren&rsquo;t selling
+            The true cost of manual prospecting, measured in time your reps aren&rsquo;t selling
           </p>
 
           <div className="mp-metrics-grid" data-reveal-stagger="110">
@@ -88,23 +84,23 @@ export default function ManualProspectingPage() {
       {/* ===================== FOUR ROOT CAUSES (interactive) ===================== */}
       <ManualProspectingCauses />
 
-      {/* ===================== DEEP DIVE — RESEARCH TIME & SIGNALS ===================== */}
+      {/* ===================== DEEP DIVE - RESEARCH TIME & SIGNALS ===================== */}
       <section className="mp-pp">
         <div className="container">
           <div className="mp-pp-layout">
             {/* ---- left: copy + features ---- */}
             <div className="mp-pp-text" data-reveal-stagger="100">
               <span className="mp-pp-label" data-reveal>
-                Root Cause 1 + 3 &mdash; Research Time &amp; Missing Signals
+                Root Cause 1 + 3: Research Time &amp; Missing Signals
               </span>
               <h2 data-reveal>
-                Describe Your Buyer Once. Zeus Finds Them &mdash; With a Reason to Call.
+                Describe Your Buyer Once. Zeus Finds Them, With a Reason to Call.
               </h2>
               <p className="mp-pp-lead" data-reveal>
                 The manual loop looks like this: spend the morning researching, find a name, guess
                 at a reason to reach out, write something generic, and wonder why no one replies.
-                Zeus breaks the loop. Type a description of your ideal buyer &mdash; in plain English
-                &mdash; and get back a ranked list of verified contacts, each flagged with the
+                Zeus breaks the loop. Type a description of your ideal buyer, in plain English,
+                and get back a ranked list of verified contacts, each flagged with the
                 specific signal that makes them worth contacting right now.
               </p>
 
@@ -127,8 +123,8 @@ export default function ManualProspectingPage() {
                   <div className="mp-pp-feat-body">
                     <h4>Buying Signals Built In</h4>
                     <p>
-                      NeoBrain AI reads each contact&rsquo;s recent company signals &mdash; funding
-                      rounds, leadership changes, hiring surges, technology shifts &mdash; and
+                      NeoBrain AI reads each contact&rsquo;s recent company signals: funding
+                      rounds, leadership changes, hiring surges, technology shifts, and
                       surfaces the specific one that makes this the right moment to reach out. Every
                       result comes with a &ldquo;why now,&rdquo; not just a &ldquo;who.&rdquo;
                     </p>
@@ -143,7 +139,7 @@ export default function ManualProspectingPage() {
         </div>
       </section>
 
-      {/* ===================== DEEP DIVE — TOOL SPRAWL & STALE LISTS ===================== */}
+      {/* ===================== DEEP DIVE - TOOL SPRAWL & STALE LISTS ===================== */}
       <section className="mp-df">
         <div className="container">
           <div className="mp-df-layout">
@@ -153,7 +149,7 @@ export default function ManualProspectingPage() {
             {/* ---- right: copy + features ---- */}
             <div className="mp-pp-text" data-reveal-stagger="100">
               <span className="mp-pp-label neutral" data-reveal>
-                Root Cause 2 + 4 &mdash; Tool Sprawl &amp; Stale Lists
+                Root Cause 2 + 4: Tool Sprawl &amp; Stale Lists
               </span>
               <h2 data-reveal>
                 From Search to Live Campaign. Four Minutes. One Platform.
@@ -161,7 +157,7 @@ export default function ManualProspectingPage() {
               <p className="mp-pp-lead" data-reveal>
                 The average manual workflow spans eight tools and takes hours before a campaign is
                 even ready to launch. In NeoLeads, Zeus finds the contacts, Verifyrit validates them,
-                NeoBrain AI writes the opening lines, and Sendrit launches the campaign &mdash; all
+                NeoBrain AI writes the opening lines, and Sendrit launches the campaign, all
                 without leaving the platform. Eight logins and eight context-switches become one
                 uninterrupted workflow.
               </p>
@@ -186,7 +182,7 @@ export default function ManualProspectingPage() {
                     <h4>Saved Searches That Maintain Themselves</h4>
                     <p>
                       Turn any Zeus search into a living list that re-runs automatically and surfaces
-                      new matches as they appear &mdash; with Verifyrit validating every new contact
+                      new matches as they appear, with Verifyrit validating every new contact
                       in real time. The list your team worked from in October is still accurate in
                       January without anyone touching it.
                     </p>
@@ -214,8 +210,8 @@ export default function ManualProspectingPage() {
               Platform That Eliminates Them.
             </h2>
             <p data-reveal>
-              Each NeoLeads product removes a specific layer of the manual prospecting problem
-              &mdash; and because they&rsquo;re connected, the time savings compound across every
+              Each NeoLeads product removes a specific layer of the manual prospecting problem,
+              and because they&rsquo;re connected, the time savings compound across every
               step of the workflow.
             </p>
           </div>
@@ -231,8 +227,8 @@ export default function ManualProspectingPage() {
               <p className="mp-sum-desc">
                 A 10-second natural language search replaces hours of LinkedIn scrolling,
                 tab-switching, and manual cross-referencing. Every result arrives pre-scored by
-                NeoBrain AI with the buying signal that makes the contact worth reaching out to today
-                &mdash; not just a verified email and a job title.
+                NeoBrain AI with the buying signal that makes the contact worth reaching out to today,
+                not just a verified email and a job title.
               </p>
               <p className="mp-sum-shift">
                 <Icon name="arrow-right" aria-hidden="true" />
@@ -255,8 +251,8 @@ export default function ManualProspectingPage() {
                 <span className="mp-sum-chip">NeoBrain AI</span>
               </div>
               <p className="mp-sum-desc">
-                Finding, verifying, warming, sending, and managing replies all happen inside NeoLeads
-                &mdash; connected, without format mismatches, re-uploads, or context-switches. The
+                Finding, verifying, warming, sending, and managing replies all happen inside NeoLeads,
+                connected, without format mismatches, re-uploads, or context-switches. The
                 8-tool stack that was bought to save time becomes one workflow that actually does.
               </p>
               <p className="mp-sum-shift">
@@ -279,8 +275,8 @@ export default function ManualProspectingPage() {
               <p className="mp-sum-desc">
                 Saved searches re-run automatically and surface new matches as they appear, with
                 Verifyrit validating each new contact in real time and NeoBrain AI scoring them
-                against your ICP. The list you built in October is still accurate &mdash; and growing
-                &mdash; in January.
+                against your ICP. The list you built in October is still accurate, and growing,
+                in January.
               </p>
               <p className="mp-sum-shift">
                 <Icon name="arrow-right" aria-hidden="true" />
@@ -354,7 +350,7 @@ export default function ManualProspectingPage() {
         </div>
       </section>
 
-      {/* ===================== FINAL CTA — GET STARTED ===================== */}
+      {/* ===================== FINAL CTA - GET STARTED ===================== */}
       <section className="final-cta">
         <div className="container" data-reveal-stagger="100">
           <span className="section-label" data-reveal>GET STARTED</span>
