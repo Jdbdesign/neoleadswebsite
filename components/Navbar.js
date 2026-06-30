@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Icon from './Icon';
 
 const PRODUCTS = [
-  { href: '/zeus-prospecting', icon: 'search', title: 'Zeus', desc: 'Find verified decision-makers before your competitors do', primary: true },
+  { href: '/zeus-prospecting', icon: 'search', title: 'Zeus', desc: 'Find verified decision-makers before your competitors do' },
   { href: '/sendrit', icon: 'send', title: 'Sendrit', desc: 'AI-written, multichannel sequences that actually get replies' },
   { href: '/verifyrit', icon: 'badge-check', title: 'Verifyrit', desc: 'Clean every email address before it costs you a bounce' },
   { href: '/snaarpmail', icon: 'inbox', title: 'Snaarpmail', desc: 'Bulletproof sending infrastructure and one inbox for every reply' },
@@ -16,13 +17,13 @@ const PRODUCTS = [
 const SOLUTIONS = [
   { href: '/low-reply-rates', icon: 'message-circle-off', title: 'Low Reply Rates', desc: 'Turn cold outreach into conversations that actually start' },
   { href: '/manual-prospecting', icon: 'table-2', title: 'Manual Prospecting', desc: 'Find verified buyers in seconds, not spreadsheet hours' },
-  { href: '#', icon: 'bell-off', title: 'Missed Hot Replies', desc: 'Never lose a warm reply in a flood of unread inboxes' },
+  { href: '/missed-hot-replies', icon: 'bell-off', title: 'Missed Hot Replies', desc: 'Never lose a warm reply in a flood of unread inboxes' },
   { href: '/stale-contact-data', icon: 'database', title: 'Stale Contact Data', desc: 'Stop wasting time on leads who left six months ago' },
   { href: '/generic-outreach', icon: 'copy-x', title: 'Generic Outreach', desc: 'Replace copy-paste templates with AI-researched messages' },
-  { href: '#', icon: 'bar-chart-3', title: 'No Pipeline Visibility', desc: 'See every deal, signal, and conversation in one place' },
+  { href: '/no-pipeline-visibility', icon: 'bar-chart-3', title: 'No Pipeline Visibility', desc: 'See every deal, signal, and conversation in one place' },
   { href: '/emails-landing-in-spam', icon: 'shield-x', title: 'Emails Landing in Spam', desc: 'Fix deliverability before it kills your sender reputation' },
   { href: '/high-bounce-rates', icon: 'mail-x', title: 'High Bounce Rates', desc: 'Clean every list before a single email leaves your domain' },
-  { href: '#', icon: 'list-x', title: 'Unqualified Lead Lists', desc: "Score and rank leads by who's actually ready to buy" },
+  { href: '/unqualified-lead-lists', icon: 'list-x', title: 'Unqualified Lead Lists', desc: "Score and rank leads by who's actually ready to buy" },
 ];
 
 export default function Navbar() {
@@ -30,6 +31,15 @@ export default function Navbar() {
   // Which mega-menu is open: 'products' | 'solutions' | null. Only one at a time.
   const [openMenu, setOpenMenu] = useState(null);
   const navLinksRef = useRef(null);
+
+  // Active route highlighting: the dropdown item (and its parent trigger) that
+  // matches the current page gets an `is-active` state. Off every other page,
+  // nothing is highlighted. `usePathname` returns null before hydration, so the
+  // first paint simply renders no active item.
+  const pathname = usePathname();
+  const isActive = (href) => href !== '#' && pathname === href;
+  const productsActive = PRODUCTS.some((p) => p.href === pathname);
+  const solutionsActive = SOLUTIONS.some((s) => s.href === pathname);
 
   // Mega-menus: close on outside click or Escape (matches original behaviour).
   useEffect(() => {
@@ -57,7 +67,7 @@ export default function Navbar() {
 
           <div className="nav-links" ref={navLinksRef}>
             <div
-              className={`nav-item${openMenu === 'products' ? ' open' : ''}`}
+              className={`nav-item${openMenu === 'products' ? ' open' : ''}${productsActive ? ' is-active' : ''}`}
               id="productsNav"
             >
               <button
@@ -82,8 +92,9 @@ export default function Navbar() {
                   {PRODUCTS.map((p) => (
                     <Link
                       key={p.title}
-                      className={`mega-item${p.primary ? ' is-primary' : ''}`}
+                      className={`mega-item${isActive(p.href) ? ' is-active' : ''}`}
                       role="menuitem"
+                      aria-current={isActive(p.href) ? 'page' : undefined}
                       href={p.href}
                       onClick={() => setOpenMenu(null)}
                     >
@@ -101,7 +112,7 @@ export default function Navbar() {
             </div>
 
             <div
-              className={`nav-item${openMenu === 'solutions' ? ' open' : ''}`}
+              className={`nav-item${openMenu === 'solutions' ? ' open' : ''}${solutionsActive ? ' is-active' : ''}`}
               id="solutionsNav"
             >
               <button
@@ -126,8 +137,9 @@ export default function Navbar() {
                   {SOLUTIONS.map((s) => (
                     <a
                       key={s.title}
-                      className="mega-item"
+                      className={`mega-item${isActive(s.href) ? ' is-active' : ''}`}
                       role="menuitem"
+                      aria-current={isActive(s.href) ? 'page' : undefined}
                       href={s.href}
                       onClick={() => setOpenMenu(null)}
                     >
@@ -181,7 +193,8 @@ export default function Navbar() {
         {PRODUCTS.map((p) => (
           <Link
             key={p.title}
-            className="mobile-sub"
+            className={`mobile-sub${isActive(p.href) ? ' is-active' : ''}`}
+            aria-current={isActive(p.href) ? 'page' : undefined}
             href={p.href}
             onClick={() => setMobileOpen(false)}
           >
@@ -192,7 +205,8 @@ export default function Navbar() {
         {SOLUTIONS.map((s) => (
           <a
             key={s.title}
-            className="mobile-sub"
+            className={`mobile-sub${isActive(s.href) ? ' is-active' : ''}`}
+            aria-current={isActive(s.href) ? 'page' : undefined}
             href={s.href}
             onClick={() => setMobileOpen(false)}
           >

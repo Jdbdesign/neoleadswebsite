@@ -21,10 +21,6 @@ export default function LowReplyRatesPage() {
       {/* ===================== HERO ===================== */}
       <section className="lrr-hero">
         <div className="container" data-reveal-stagger="100" data-reveal-onload>
-          <span className="lrr-badge" data-reveal>
-            <Icon name="message-circle-off" aria-hidden="true" />
-            Low Reply Rates
-          </span>
           <h1 data-reveal>
             19 of 20 Cold Emails{' '}
             <span className="lrr-nowrap">Get <span className="lrr-danger">Ignored.</span></span><br />
