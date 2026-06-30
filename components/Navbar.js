@@ -26,6 +26,15 @@ const SOLUTIONS = [
   { href: '/unqualified-lead-lists', icon: 'list-x', title: 'Unqualified Lead Lists', desc: "Score and rank leads by who's actually ready to buy" },
 ];
 
+const CASE_STUDIES = [
+  { href: '/case-studies/the-lean-startup', icon: 'rocket', title: 'The Lean Startup', desc: 'How a 2-person team replaced their SDR hire with Zeus and Sendrit' },
+  { href: '/case-studies/the-agency-scale-up', icon: 'briefcase', title: 'The Agency Scale-Up', desc: 'How one agency ran outbound for 12 clients from a single NeoLeads seat' },
+  { href: '/case-studies/the-deliverability-rescue', icon: 'shield-check', title: 'The Deliverability Rescue', desc: 'From 8.4% bounce rate and blacklisted domain to 96% inbox placement' },
+  { href: '/case-studies/the-cold-start', icon: 'zap', title: 'The Cold Start', desc: 'Zero pipeline to 50 qualified conversations in under 6 weeks' },
+  { href: "/case-studies/the-sales-leaders-stack-collapse", icon: 'layers', title: "The Sales Leader's Stack Collapse", desc: 'How a VP Sales replaced 5 tools with NeoLeads and cut costs by 60%' },
+  { href: '/case-studies/the-reply-rate-turnaround', icon: 'mail-open', title: 'The Reply Rate Turnaround', desc: 'From 1.8% to 11.4% reply rate — same list, same offer, different system' },
+];
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   // Which mega-menu is open: 'products' | 'solutions' | null. Only one at a time.
@@ -40,6 +49,7 @@ export default function Navbar() {
   const isActive = (href) => href !== '#' && pathname === href;
   const productsActive = PRODUCTS.some((p) => p.href === pathname);
   const solutionsActive = SOLUTIONS.some((s) => s.href === pathname);
+  const caseStudiesActive = CASE_STUDIES.some((c) => c.href === pathname);
 
   // Mega-menus: close on outside click or Escape (matches original behaviour).
   useEffect(() => {
@@ -156,10 +166,50 @@ export default function Navbar() {
               </div>
             </div>
 
-            <a href="#testimonials">
-              Case Studies{' '}
-              <span className="caret" aria-hidden="true"><Icon name="chevron-down" /></span>
-            </a>
+            <div
+              className={`nav-item${openMenu === 'casestudies' ? ' open' : ''}${caseStudiesActive ? ' is-active' : ''}`}
+              id="caseStudiesNav"
+            >
+              <button
+                className="nav-trigger"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded={openMenu === 'casestudies'}
+                aria-controls="caseStudiesMenu"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setOpenMenu((v) => (v === 'casestudies' ? null : 'casestudies'));
+                }}
+              >
+                Case Studies{' '}
+                <span className="caret" aria-hidden="true">
+                  <Icon name="chevron-down" />
+                </span>
+              </button>
+
+              <div className="mega-menu" id="caseStudiesMenu" role="menu" aria-label="Case Studies">
+                <div className="mega-grid">
+                  {CASE_STUDIES.map((c) => (
+                    <Link
+                      key={c.title}
+                      className={`mega-item${isActive(c.href) ? ' is-active' : ''}`}
+                      role="menuitem"
+                      aria-current={isActive(c.href) ? 'page' : undefined}
+                      href={c.href}
+                      onClick={() => setOpenMenu(null)}
+                    >
+                      <span className="mega-ic">
+                        <Icon name={c.icon} />
+                      </span>
+                      <span className="mega-text">
+                        <span className="mega-title">{c.title}</span>
+                        <span className="mega-desc">{c.desc}</span>
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
             <a href="#pricing">Pricing</a>
             <a href="#integrations">Integration</a>
             <a href="#features">
@@ -213,7 +263,18 @@ export default function Navbar() {
             {s.title}
           </a>
         ))}
-        <a href="#testimonials" onClick={() => setMobileOpen(false)}>Case Studies</a>
+        <span className="mobile-group-label">Case Studies</span>
+        {CASE_STUDIES.map((c) => (
+          <Link
+            key={c.title}
+            className={`mobile-sub${isActive(c.href) ? ' is-active' : ''}`}
+            aria-current={isActive(c.href) ? 'page' : undefined}
+            href={c.href}
+            onClick={() => setMobileOpen(false)}
+          >
+            {c.title}
+          </Link>
+        ))}
         <a href="#pricing" onClick={() => setMobileOpen(false)}>Pricing</a>
         <a href="#integrations" onClick={() => setMobileOpen(false)}>Integration</a>
         <a href="#features" onClick={() => setMobileOpen(false)}>Resources</a>
